@@ -1,0 +1,576 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="https://securepay.quickflora.com/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="https://securepay.quickflora.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="https://securepay.quickflora.com/">
+      <s:element name="PaymentAuthorizeNetDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OrdNumber" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CreditCard" type="tns:_CreditCard" />
+            <s:element minOccurs="1" maxOccurs="1" name="Customer" type="tns:_Customer" />
+            <s:element minOccurs="1" maxOccurs="1" name="AuthorizeNet_Gate" type="tns:_AuthorizeNet_Gate" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="_CreditCard">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CreditCardNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CreditCardExpMonth" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CreditCardExpYear" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Amt" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CreditCardCSVNumber" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="_Customer">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Customeremail" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerFirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerLastName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerAddress1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerAddress2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerCity" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerState" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerZip" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="_AuthorizeNet_Gate">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CompanyID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DepartmentID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DivisionID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="InLineNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="APILoginID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TransactionKey" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TestMode" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PaymentAuthorizeNetDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PaymentAuthorizeNetDetailsResult" type="tns:_AuthorizeNet_Result" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="_AuthorizeNet_Result">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Approved" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="lblCCMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AuthorizationCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResponseCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TransactionID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResponseReasonCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AVSResponse" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CCVResponse" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ReceiptPaymentAuthorizeNetDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OrdNumber" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CreditCard" type="tns:_CreditCard" />
+            <s:element minOccurs="1" maxOccurs="1" name="Customer" type="tns:_Customer" />
+            <s:element minOccurs="1" maxOccurs="1" name="AuthorizeNet_Gate" type="tns:_AuthorizeNet_Gate" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReceiptPaymentAuthorizeNetDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ReceiptPaymentAuthorizeNetDetailsResult" type="tns:_AuthorizeNet_Result" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VoidRequestDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="void" type="tns:_AuthorizeNet_VoidAndCredit" />
+            <s:element minOccurs="1" maxOccurs="1" name="AuthorizeNet_Gate" type="tns:_AuthorizeNet_Gate" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="_AuthorizeNet_VoidAndCredit">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="TransactionID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="amount" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="CreditCardNumber" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="VoidRequestDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="VoidRequestDetailsResult" type="tns:_AuthorizeNet_Result" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreditRequestDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="credit" type="tns:_AuthorizeNet_VoidAndCredit" />
+            <s:element minOccurs="1" maxOccurs="1" name="AuthorizeNet_Gate" type="tns:_AuthorizeNet_Gate" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreditRequestDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CreditRequestDetailsResult" type="tns:_AuthorizeNet_Result" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PaymentCayanDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OrdNumber" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CreditCard" type="tns:_CreditCard" />
+            <s:element minOccurs="1" maxOccurs="1" name="Customer" type="tns:_Customer" />
+            <s:element minOccurs="1" maxOccurs="1" name="Cayan_Gate" type="tns:_Cayan_Gate" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="_Cayan_Gate">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CompanyID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DepartmentID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DivisionID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="InLineNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="txtSiteID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="txtKey" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="txtName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Merchant_Mode" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PaymentCayanDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PaymentCayanDetailsResult" type="tns:_Cayan_Result" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="_Cayan_Result">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ApprovalStatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReferenceID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AuthCode" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PaymentCayanDetailsVoid">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OrdNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PPIOrderID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CreditCard" type="tns:_CreditCard" />
+            <s:element minOccurs="1" maxOccurs="1" name="Customer" type="tns:_Customer" />
+            <s:element minOccurs="1" maxOccurs="1" name="Cayan_Gate" type="tns:_Cayan_Gate" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PaymentCayanDetailsVoidResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PaymentCayanDetailsVoidResult" type="tns:_Cayan_Result" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PaymentCayanDetailsCredit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OrdNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PPIOrderID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CreditCard" type="tns:_CreditCard" />
+            <s:element minOccurs="1" maxOccurs="1" name="Customer" type="tns:_Customer" />
+            <s:element minOccurs="1" maxOccurs="1" name="Cayan_Gate" type="tns:_Cayan_Gate" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PaymentCayanDetailsCreditResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PaymentCayanDetailsCreditResult" type="tns:_Cayan_Result" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PaymentPayPalDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OrdNumber" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CreditCard" type="tns:_CreditCard" />
+            <s:element minOccurs="1" maxOccurs="1" name="Customer" type="tns:_Customer" />
+            <s:element minOccurs="1" maxOccurs="1" name="PayPal_Gate" type="tns:_PayPal_Gate" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="_PayPal_Gate">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CompanyID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DepartmentID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DivisionID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="InLineNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Partnername" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Vendorname" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PaymentURL" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PaymentPayPalDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PaymentPayPalDetailsResult" type="tns:_Paypal_Result" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="_Paypal_Result">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Result" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="RespMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AuthCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ApprovalNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="lblCCMessage" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PaymentPayPalDetailsVoid">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OrdNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PayPalPNREF" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CreditCard" type="tns:_CreditCard" />
+            <s:element minOccurs="1" maxOccurs="1" name="PayPal_Gate" type="tns:_PayPal_Gate" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PaymentPayPalDetailsVoidResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PaymentPayPalDetailsVoidResult" type="tns:_Paypal_Result" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PaymentPayPalDetailsCredit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OrdNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PayPalPNREF" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CreditCard" type="tns:_CreditCard" />
+            <s:element minOccurs="1" maxOccurs="1" name="PayPal_Gate" type="tns:_PayPal_Gate" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PaymentPayPalDetailsCreditResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PaymentPayPalDetailsCreditResult" type="tns:_Paypal_Result" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="PaymentAuthorizeNetDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:PaymentAuthorizeNetDetails" />
+  </wsdl:message>
+  <wsdl:message name="PaymentAuthorizeNetDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:PaymentAuthorizeNetDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReceiptPaymentAuthorizeNetDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:ReceiptPaymentAuthorizeNetDetails" />
+  </wsdl:message>
+  <wsdl:message name="ReceiptPaymentAuthorizeNetDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:ReceiptPaymentAuthorizeNetDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="VoidRequestDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:VoidRequestDetails" />
+  </wsdl:message>
+  <wsdl:message name="VoidRequestDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:VoidRequestDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreditRequestDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:CreditRequestDetails" />
+  </wsdl:message>
+  <wsdl:message name="CreditRequestDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:CreditRequestDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="PaymentCayanDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:PaymentCayanDetails" />
+  </wsdl:message>
+  <wsdl:message name="PaymentCayanDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:PaymentCayanDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="PaymentCayanDetailsVoidSoapIn">
+    <wsdl:part name="parameters" element="tns:PaymentCayanDetailsVoid" />
+  </wsdl:message>
+  <wsdl:message name="PaymentCayanDetailsVoidSoapOut">
+    <wsdl:part name="parameters" element="tns:PaymentCayanDetailsVoidResponse" />
+  </wsdl:message>
+  <wsdl:message name="PaymentCayanDetailsCreditSoapIn">
+    <wsdl:part name="parameters" element="tns:PaymentCayanDetailsCredit" />
+  </wsdl:message>
+  <wsdl:message name="PaymentCayanDetailsCreditSoapOut">
+    <wsdl:part name="parameters" element="tns:PaymentCayanDetailsCreditResponse" />
+  </wsdl:message>
+  <wsdl:message name="PaymentPayPalDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:PaymentPayPalDetails" />
+  </wsdl:message>
+  <wsdl:message name="PaymentPayPalDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:PaymentPayPalDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="PaymentPayPalDetailsVoidSoapIn">
+    <wsdl:part name="parameters" element="tns:PaymentPayPalDetailsVoid" />
+  </wsdl:message>
+  <wsdl:message name="PaymentPayPalDetailsVoidSoapOut">
+    <wsdl:part name="parameters" element="tns:PaymentPayPalDetailsVoidResponse" />
+  </wsdl:message>
+  <wsdl:message name="PaymentPayPalDetailsCreditSoapIn">
+    <wsdl:part name="parameters" element="tns:PaymentPayPalDetailsCredit" />
+  </wsdl:message>
+  <wsdl:message name="PaymentPayPalDetailsCreditSoapOut">
+    <wsdl:part name="parameters" element="tns:PaymentPayPalDetailsCreditResponse" />
+  </wsdl:message>
+  <wsdl:portType name="PaymentProcessSoap">
+    <wsdl:operation name="PaymentAuthorizeNetDetails">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">AuthorizeNetRequest Approval Function.</wsdl:documentation>
+      <wsdl:input message="tns:PaymentAuthorizeNetDetailsSoapIn" />
+      <wsdl:output message="tns:PaymentAuthorizeNetDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReceiptPaymentAuthorizeNetDetails">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">AuthorizeNetRequest Receipt Approval Function.</wsdl:documentation>
+      <wsdl:input message="tns:ReceiptPaymentAuthorizeNetDetailsSoapIn" />
+      <wsdl:output message="tns:ReceiptPaymentAuthorizeNetDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VoidRequestDetails">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">VoidRequest Approval Function.</wsdl:documentation>
+      <wsdl:input message="tns:VoidRequestDetailsSoapIn" />
+      <wsdl:output message="tns:VoidRequestDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreditRequestDetails">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">CreditRequest Approval Function.</wsdl:documentation>
+      <wsdl:input message="tns:CreditRequestDetailsSoapIn" />
+      <wsdl:output message="tns:CreditRequestDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PaymentCayanDetails">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PaymentCayanDetails Function.</wsdl:documentation>
+      <wsdl:input message="tns:PaymentCayanDetailsSoapIn" />
+      <wsdl:output message="tns:PaymentCayanDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PaymentCayanDetailsVoid">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Cayan Void Request Function.</wsdl:documentation>
+      <wsdl:input message="tns:PaymentCayanDetailsVoidSoapIn" />
+      <wsdl:output message="tns:PaymentCayanDetailsVoidSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PaymentCayanDetailsCredit">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Cayan Credit Request Function.</wsdl:documentation>
+      <wsdl:input message="tns:PaymentCayanDetailsCreditSoapIn" />
+      <wsdl:output message="tns:PaymentCayanDetailsCreditSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PaymentPayPalDetails">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PaymentPayPalDetails Function.</wsdl:documentation>
+      <wsdl:input message="tns:PaymentPayPalDetailsSoapIn" />
+      <wsdl:output message="tns:PaymentPayPalDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PaymentPayPalDetailsVoid">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PayPal Void Request Function.</wsdl:documentation>
+      <wsdl:input message="tns:PaymentPayPalDetailsVoidSoapIn" />
+      <wsdl:output message="tns:PaymentPayPalDetailsVoidSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PaymentPayPalDetailsCredit">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PayPal Credit Request Function.</wsdl:documentation>
+      <wsdl:input message="tns:PaymentPayPalDetailsCreditSoapIn" />
+      <wsdl:output message="tns:PaymentPayPalDetailsCreditSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PaymentProcessSoap" type="tns:PaymentProcessSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="PaymentAuthorizeNetDetails">
+      <soap:operation soapAction="https://securepay.quickflora.com/PaymentAuthorizeNetDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReceiptPaymentAuthorizeNetDetails">
+      <soap:operation soapAction="https://securepay.quickflora.com/ReceiptPaymentAuthorizeNetDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VoidRequestDetails">
+      <soap:operation soapAction="https://securepay.quickflora.com/VoidRequestDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreditRequestDetails">
+      <soap:operation soapAction="https://securepay.quickflora.com/CreditRequestDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PaymentCayanDetails">
+      <soap:operation soapAction="https://securepay.quickflora.com/PaymentCayanDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PaymentCayanDetailsVoid">
+      <soap:operation soapAction="https://securepay.quickflora.com/PaymentCayanDetailsVoid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PaymentCayanDetailsCredit">
+      <soap:operation soapAction="https://securepay.quickflora.com/PaymentCayanDetailsCredit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PaymentPayPalDetails">
+      <soap:operation soapAction="https://securepay.quickflora.com/PaymentPayPalDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PaymentPayPalDetailsVoid">
+      <soap:operation soapAction="https://securepay.quickflora.com/PaymentPayPalDetailsVoid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PaymentPayPalDetailsCredit">
+      <soap:operation soapAction="https://securepay.quickflora.com/PaymentPayPalDetailsCredit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="PaymentProcessSoap12" type="tns:PaymentProcessSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="PaymentAuthorizeNetDetails">
+      <soap12:operation soapAction="https://securepay.quickflora.com/PaymentAuthorizeNetDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReceiptPaymentAuthorizeNetDetails">
+      <soap12:operation soapAction="https://securepay.quickflora.com/ReceiptPaymentAuthorizeNetDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VoidRequestDetails">
+      <soap12:operation soapAction="https://securepay.quickflora.com/VoidRequestDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreditRequestDetails">
+      <soap12:operation soapAction="https://securepay.quickflora.com/CreditRequestDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PaymentCayanDetails">
+      <soap12:operation soapAction="https://securepay.quickflora.com/PaymentCayanDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PaymentCayanDetailsVoid">
+      <soap12:operation soapAction="https://securepay.quickflora.com/PaymentCayanDetailsVoid" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PaymentCayanDetailsCredit">
+      <soap12:operation soapAction="https://securepay.quickflora.com/PaymentCayanDetailsCredit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PaymentPayPalDetails">
+      <soap12:operation soapAction="https://securepay.quickflora.com/PaymentPayPalDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PaymentPayPalDetailsVoid">
+      <soap12:operation soapAction="https://securepay.quickflora.com/PaymentPayPalDetailsVoid" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PaymentPayPalDetailsCredit">
+      <soap12:operation soapAction="https://securepay.quickflora.com/PaymentPayPalDetailsCredit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PaymentProcess">
+    <wsdl:port name="PaymentProcessSoap" binding="tns:PaymentProcessSoap">
+      <soap:address location="https://securepay.quickflora.com/PaymentProcess.asmx" />
+    </wsdl:port>
+    <wsdl:port name="PaymentProcessSoap12" binding="tns:PaymentProcessSoap12">
+      <soap12:address location="https://securepay.quickflora.com/PaymentProcess.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

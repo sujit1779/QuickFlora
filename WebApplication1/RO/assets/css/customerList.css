@@ -1,0 +1,72 @@
+body{
+    background-color: #f2f2f2;
+}
+.buttons-html5{
+    background: #678b38;
+    color: #ffffff;
+    border-radius: 5px;
+    border: none;
+    padding: 4px 8px;
+}
+.page-item.active .page-link {
+    background-color: #678b38!important;
+    color: #ffffff!important;
+    border-color: #678b38!important;
+}
+.page-item .page-link {
+    color:#678b38!important;
+}
+.hover-visible{
+  visibility: hidden;
+}
+.navbar-brand:hover .hover-visible{
+  visibility: visible;
+}
+.card{
+    border-radius: 10px!important;
+}
+.w-11{
+    width: 11%!important;
+}
+.fs-8{
+    font-size: 12px;
+}
+.form-control-sm {
+    min-height: calc(.25rem + (.25rem + 2px))!important;
+    padding: .15rem .25rem!important;
+    font-size: 12px!important;
+}
+.btn-primary{
+    background-color: #678b38!important;
+}
+.btn:hover ,.buttons-html5:hover{
+  box-shadow: 2px 4px 5px #cdc3c3;
+}
+.text-primary{
+    color: #678b38!important;
+}
+input[type="radio"] {
+    margin-top: 5px;
+}
+input[type="radio"]:checked+label{
+    font-weight: 500;
+}
+input[type="radio"]+label{
+    cursor: pointer;
+}
+.btn-light{
+    background-color: #c6dcac;
+}
+.cursor-pointer{
+    cursor: pointer;
+}
+.dataTables_length {
+    float: right;
+    margin-bottom: .5rem;
+}
+.btn{
+    font-size: inherit!important;
+}
+.footer{
+    background-color: #678b38;
+}

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://api.flowershopnetwork.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:impl="http://api.flowershopnetwork.com" xmlns:xsd1="http://api.flowershopnetwork.com" name="FSNAPI" targetNamespace="http://api.flowershopnetwork.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types />
+  <wsdl:message name="LoginRequest">
+    <wsdl:part name="username" type="xsd:string" />
+    <wsdl:part name="password" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="LoginResponse">
+    <wsdl:part name="return" type="xsd:boolean" />
+  </wsdl:message>
+  <wsdl:message name="ValidateLoginRequest" />
+  <wsdl:message name="ValidateLoginResponse">
+    <wsdl:part name="return" type="xsd:boolean" />
+  </wsdl:message>
+  <wsdl:message name="SendOrderRequest">
+    <wsdl:part name="contact" type="xsd:string" />
+    <wsdl:part name="year" type="xsd:string" />
+    <wsdl:part name="month" type="xsd:string" />
+    <wsdl:part name="day" type="xsd:string" />
+    <wsdl:part name="firstName" type="xsd:string" />
+    <wsdl:part name="lastName" type="xsd:string" />
+    <wsdl:part name="reAddress" type="xsd:string" />
+    <wsdl:part name="reCity" type="xsd:string" />
+    <wsdl:part name="reState" type="xsd:string" />
+    <wsdl:part name="description" type="xsd:string" />
+    <wsdl:part name="cardMessage" type="xsd:string" />
+    <wsdl:part name="totalOrder" type="xsd:float" />
+    <wsdl:part name="priority" type="xsd:string" />
+    <wsdl:part name="occasion" type="xsd:int" />
+    <wsdl:part name="addInfo" type="xsd:string" />
+    <wsdl:part name="attention" type="xsd:string" />
+    <wsdl:part name="reCountry" type="xsd:string" />
+    <wsdl:part name="reZip" type="xsd:string" />
+    <wsdl:part name="rePhone" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="SendOrderResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:portType name="FSNAPIPortType">
+    <wsdl:operation name="login" parameterOrder="username password">
+      <wsdl:input message="xsd1:LoginRequest" />
+      <wsdl:output message="xsd1:LoginResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="validateLogin">
+      <wsdl:input message="xsd1:ValidateLoginRequest" />
+      <wsdl:output message="xsd1:ValidateLoginResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="sendOrder" parameterOrder="contact year month day firstName lastName reAddress reCity reState description cardMessage totalOrder priority occasion addInfo attention reCountry reZip rePhone">
+      <wsdl:input message="xsd1:SendOrderRequest" />
+      <wsdl:output message="xsd1:SendOrderResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="FSNAPIBinding" type="xsd1:FSNAPIPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <wsdl:operation name="login">
+      <soap:operation soapAction="urn:FSNAPI#FSNAPIServer#login" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://api.flowershopnetwork.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="username password" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://api.flowershopnetwork.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="return" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="validateLogin">
+      <soap:operation soapAction="urn:FSNAPI#FSNAPIServer#validateLogin" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://api.flowershopnetwork.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://api.flowershopnetwork.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="return" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendOrder">
+      <soap:operation soapAction="urn:FSNAPI#FSNAPIServer#sendOrder" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://api.flowershopnetwork.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="contact year month day firstName lastName reAddress reCity reState description cardMessage totalOrder priority occasion addInfo attention reCountry reZip rePhone" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://api.flowershopnetwork.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="return" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FSNAPIService">
+    <wsdl:port name="FSNAPIPort" binding="xsd1:FSNAPIBinding">
+      <soap:address location="https://api.flowershopnetwork.com/soap.php" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

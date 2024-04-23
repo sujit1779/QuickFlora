@@ -1,0 +1,3642 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail">
+      <s:element name="ApplyTip">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSiteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOriginalReferenceID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTipAmount" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ApplyTipResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ApplyTipResult" type="tns:RetailTransactionStatusInfo2" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RetailTransactionStatusInfo2">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ReferenceID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OrderNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TXDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ApprovalStatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AuthCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CardHolder" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Amount" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Type" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CardNumber" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CardType" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="AVSResponse" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CVResponse" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="POSEntryType" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ExtData" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="IssueBatch">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSiteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueBatchResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IssueBatchResult" type="tns:RetailBatchStatusInfo2" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RetailBatchStatusInfo2">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ReferenceID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TXDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BatchStatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AuthCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TXCount" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="BatchAmount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ExtData" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="IssueDebitSale">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSiteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTrackData" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPINBlock" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strKeySerialNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCardHolder" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSurchargeDetail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCashbackInfo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAllowDuplicates" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRegisterNum" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueDebitSaleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IssueDebitSaleResult" type="tns:RetailTransactionStatusInfo2" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueEncryptedDebitSaleMagensa10">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSiteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEncTrack1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEncTrack2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEncTrack3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strKSN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMPData" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMPStatus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPINBlock" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strKeySerialNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCardHolder" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSurchargeDetail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCashbackInfo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAllowDuplicates" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRegisterNum" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueEncryptedDebitSaleMagensa10Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IssueEncryptedDebitSaleMagensa10Result" type="tns:RetailTransactionStatusInfo2" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueEncryptedDebitSaleMagensa20">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSiteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMaskTrack1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMaskTrack2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMaskTrack3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDeviceSN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPINBlock" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strKeySerialNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSurchargeDetail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCashbackInfo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAllowDuplicates" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRegisterNum" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueEncryptedDebitSaleMagensa20Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IssueEncryptedDebitSaleMagensa20Result" type="tns:RetailTransactionStatusInfo2" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueEncryptedDebitSaleMagTek10">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSiteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEncTrack1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEncTrack2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEncTrack3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strKSN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMPData" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMPStatus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPINBlock" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strKeySerialNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCardHolder" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSurchargeDetail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCashbackInfo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAllowDuplicates" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRegisterNum" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueEncryptedDebitSaleMagTek10Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IssueEncryptedDebitSaleMagTek10Result" type="tns:RetailTransactionStatusInfo2" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueEncryptedDebitSaleMagTek20">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSiteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMaskTrack1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMaskTrack2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMaskTrack3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDeviceSN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPINBlock" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strKeySerialNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSurchargeDetail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCashbackInfo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAllowDuplicates" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRegisterNum" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueEncryptedDebitSaleMagTek20Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IssueEncryptedDebitSaleMagTek20Result" type="tns:RetailTransactionStatusInfo2" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueEncryptedLevel2SaleIdTech">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSiteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEncTrack" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDeviceSN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strKSN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCustomerCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPurchaseOrderNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTaxAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAllowDuplicates" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRegisterNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTransactionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEntryMode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueEncryptedLevel2SaleIdTechResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IssueEncryptedLevel2SaleIdTechResult" type="tns:RetailLevel2TransactionStatusInfo2" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RetailLevel2TransactionStatusInfo2">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ReferenceID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OrderNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TXDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ApprovalStatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AuthCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CardHolder" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Amount" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Type" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CardNumber" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CardType" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="AVSResponse" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CVResponse" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="POSEntryType" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PurchaseOrderNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TaxAmount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ExtData" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="IssueEncryptedLevel2SaleMagensa10">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSiteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEncTrack1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEncTrack2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEncTrack3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strKSN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMPData" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMPStatus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCardHolder" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCustomerCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPurchaseOrderNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTaxAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAllowDuplicates" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRegisterNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTransactionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEntryMode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueEncryptedLevel2SaleMagensa10Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IssueEncryptedLevel2SaleMagensa10Result" type="tns:RetailLevel2TransactionStatusInfo2" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueEncryptedLevel2SaleMagensa20">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSiteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMaskTrack1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMaskTrack2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMaskTrack3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDeviceSN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCustomerCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPurchaseOrderNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTaxAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAllowDuplicates" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRegisterNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTransactionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEntryMode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueEncryptedLevel2SaleMagensa20Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IssueEncryptedLevel2SaleMagensa20Result" type="tns:RetailLevel2TransactionStatusInfo2" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueEncryptedLevel2SaleMagTek10">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSiteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEncTrack1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEncTrack2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEncTrack3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strKSN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMPData" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMPStatus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCardHolder" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCustomerCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPurchaseOrderNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTaxAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAllowDuplicates" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRegisterNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTransactionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEntryMode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueEncryptedLevel2SaleMagTek10Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IssueEncryptedLevel2SaleMagTek10Result" type="tns:RetailLevel2TransactionStatusInfo2" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueEncryptedLevel2SaleMagTek20">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSiteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMaskTrack1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMaskTrack2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMaskTrack3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDeviceSN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCustomerCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPurchaseOrderNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTaxAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAllowDuplicates" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRegisterNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTransactionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEntryMode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueEncryptedLevel2SaleMagTek20Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IssueEncryptedLevel2SaleMagTek20Result" type="tns:RetailLevel2TransactionStatusInfo2" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueEncryptedPreAuthIdTech">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSiteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEncTrack" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDeviceSN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strKSN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAllowDuplicates" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRegisterNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTransactionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEntryMode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueEncryptedPreAuthIdTechResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IssueEncryptedPreAuthIdTechResult" type="tns:RetailTransactionStatusInfo2" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueEncryptedPreAuthMagensa10">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSiteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEncTrack1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEncTrack2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEncTrack3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strKSN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMPData" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMPStatus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCardHolder" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAllowDuplicates" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRegisterNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTransactionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEntryMode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueEncryptedPreAuthMagensa10Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IssueEncryptedPreAuthMagensa10Result" type="tns:RetailTransactionStatusInfo2" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueEncryptedPreAuthMagensa20">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSiteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMaskTrack1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMaskTrack2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMaskTrack3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDeviceSN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAllowDuplicates" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRegisterNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTransactionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEntryMode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueEncryptedPreAuthMagensa20Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IssueEncryptedPreAuthMagensa20Result" type="tns:RetailTransactionStatusInfo2" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueEncryptedPreAuthMagTek10">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSiteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEncTrack1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEncTrack2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEncTrack3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strKSN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMPData" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMPStatus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCardHolder" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAllowDuplicates" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRegisterNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTransactionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEntryMode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueEncryptedPreAuthMagTek10Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IssueEncryptedPreAuthMagTek10Result" type="tns:RetailTransactionStatusInfo2" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueEncryptedPreAuthMagTek20">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSiteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMaskTrack1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMaskTrack2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMaskTrack3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDeviceSN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAllowDuplicates" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRegisterNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTransactionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEntryMode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueEncryptedPreAuthMagTek20Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IssueEncryptedPreAuthMagTek20Result" type="tns:RetailTransactionStatusInfo2" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueEncryptedSaleIdTech">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSiteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEncTrack" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDeviceSN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strKSN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAllowDuplicates" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRegisterNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTransactionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEntryMode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueEncryptedSaleIdTechResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IssueEncryptedSaleIdTechResult" type="tns:RetailTransactionStatusInfo2" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueEncryptedSaleMagensa10">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSiteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEncTrack1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEncTrack2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEncTrack3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strKSN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMPData" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMPStatus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCardHolder" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAllowDuplicates" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRegisterNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTransactionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEntryMode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueEncryptedSaleMagensa10Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IssueEncryptedSaleMagensa10Result" type="tns:RetailTransactionStatusInfo2" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueEncryptedSaleMagensa20">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSiteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMaskTrack1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMaskTrack2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMaskTrack3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDeviceSN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAllowDuplicates" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRegisterNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTransactionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEntryMode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueEncryptedSaleMagensa20Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IssueEncryptedSaleMagensa20Result" type="tns:RetailTransactionStatusInfo2" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueEncryptedSaleMagTek10">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSiteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEncTrack1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEncTrack2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEncTrack3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strKSN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMPData" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMPStatus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCardHolder" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAllowDuplicates" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRegisterNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTransactionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEntryMode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueEncryptedSaleMagTek10Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IssueEncryptedSaleMagTek10Result" type="tns:RetailTransactionStatusInfo2" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueEncryptedSaleMagTek20">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSiteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMaskTrack1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMaskTrack2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMaskTrack3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDeviceSN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAllowDuplicates" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRegisterNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTransactionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEntryMode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueEncryptedSaleMagTek20Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IssueEncryptedSaleMagTek20Result" type="tns:RetailTransactionStatusInfo2" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueKeyedEBTBalanceCheck">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSiteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPAN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strExpDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPINBlock" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strKeySerialNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strBasisType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueKeyedEBTBalanceCheckResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IssueKeyedEBTBalanceCheckResult" type="tns:RetailEBTStatusInfo1" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RetailEBTStatusInfo1">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ReferenceID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OrderNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TXDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ApprovalStatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AuthCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CardHolder" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Amount" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Type" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CardNumber" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CardType" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="POSEntryType" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="EBTBasisType" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="EBTBalance" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="IssueKeyedEBTCashBenefitSale">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSiteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPAN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strExpDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPINBlock" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strKeySerialNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCardHolder" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSurchargeDetail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCashbackInfo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAllowDuplicates" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueKeyedEBTCashBenefitSaleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IssueKeyedEBTCashBenefitSaleResult" type="tns:RetailEBTStatusInfo1" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueKeyedEBTFoodStampRefund">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSiteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPAN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strExpDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPINBlock" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strKeySerialNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCardHolder" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSurchargeDetail" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueKeyedEBTFoodStampRefundResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IssueKeyedEBTFoodStampRefundResult" type="tns:RetailEBTStatusInfo1" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueKeyedEBTFoodStampSale">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSiteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPAN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strExpDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPINBlock" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strKeySerialNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCardHolder" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSurchargeDetail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAllowDuplicates" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueKeyedEBTFoodStampSaleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IssueKeyedEBTFoodStampSaleResult" type="tns:RetailEBTStatusInfo1" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueKeyedForce">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSiteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAuthCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPAN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strExpDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCardHolder" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRegisterNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTransactionId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueKeyedForceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IssueKeyedForceResult" type="tns:RetailTransactionStatusInfo2" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueKeyedLevel2Sale">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSiteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPAN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strExpDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCardHolder" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAVSStreetAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAVSZipCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCVCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCustomerCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPurchaseOrderNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTaxAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAllowDuplicates" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRegisterNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTransactionId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueKeyedLevel2SaleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IssueKeyedLevel2SaleResult" type="tns:RetailLevel2TransactionStatusInfo2" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueKeyedPreAuth">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSiteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPAN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strExpDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCardHolder" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAVSStreetAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAVSZipCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCVCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAllowDuplicates" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRegisterNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTransactionId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueKeyedPreAuthResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IssueKeyedPreAuthResult" type="tns:RetailTransactionStatusInfo2" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueKeyedSale">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSiteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPAN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strExpDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCardHolder" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAVSStreetAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAVSZipCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCVCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAllowDuplicates" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRegisterNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTransactionId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueKeyedSaleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IssueKeyedSaleResult" type="tns:RetailTransactionStatusInfo2" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssuePostAuth">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSiteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOriginalReferenceID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAllowDuplicates" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRegisterNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTransactionId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssuePostAuthResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IssuePostAuthResult" type="tns:RetailTransactionStatusInfo2" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssuePreAuthVoid">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSiteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOriginalReferenceID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOriginalAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRegisterNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTransactionId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssuePreAuthVoidResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IssuePreAuthVoidResult" type="tns:RetailTransactionStatusInfo2" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueRefundByReference">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSiteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOriginalReferenceID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOverrideAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCardHolder" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRegisterNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTransactionId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueRefundByReferenceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IssueRefundByReferenceResult" type="tns:RetailTransactionStatusInfo2" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueRepeatSale">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSiteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOriginalReferenceID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOverrideAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCardHolder" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strExpDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAVSStreetAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAVSZipCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAllowDuplicates" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRegisterNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTransactionId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueRepeatSaleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IssueRepeatSaleResult" type="tns:RetailTransactionStatusInfo2" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueSwipedEBTBalanceCheck">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSiteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTrackData" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPINBlock" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strKeySerialNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strBasisType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueSwipedEBTBalanceCheckResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IssueSwipedEBTBalanceCheckResult" type="tns:RetailEBTStatusInfo1" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueSwipedEBTCashBenefitSale">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSiteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTrackData" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPINBlock" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strKeySerialNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOverrideCardHolder" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSurchargeDetail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCashbackInfo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAllowDuplicates" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueSwipedEBTCashBenefitSaleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IssueSwipedEBTCashBenefitSaleResult" type="tns:RetailEBTStatusInfo1" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueSwipedEBTFoodStampRefund">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSiteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTrackData" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPINBlock" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strKeySerialNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOverrideCardHolder" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSurchargeDetail" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueSwipedEBTFoodStampRefundResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IssueSwipedEBTFoodStampRefundResult" type="tns:RetailEBTStatusInfo1" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueSwipedEBTFoodStampSale">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSiteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTrackData" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPINBlock" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strKeySerialNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOverrideCardHolder" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSurchargeDetail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAllowDuplicates" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueSwipedEBTFoodStampSaleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IssueSwipedEBTFoodStampSaleResult" type="tns:RetailEBTStatusInfo1" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueSwipedLevel2Sale">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSiteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTrackData" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCustomerCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPurchaseOrderNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTaxAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAllowDuplicates" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRegisterNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTransactionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEntryMode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueSwipedLevel2SaleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IssueSwipedLevel2SaleResult" type="tns:RetailLevel2TransactionStatusInfo2" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueSwipedPreAuth">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSiteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTrackData" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAllowDuplicates" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRegisterNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTransactionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEntryMode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueSwipedPreAuthResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IssueSwipedPreAuthResult" type="tns:RetailTransactionStatusInfo2" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueSwipedSale">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSiteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTrackData" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAllowDuplicates" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRegisterNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTransactionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEntryMode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueSwipedSaleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IssueSwipedSaleResult" type="tns:RetailTransactionStatusInfo2" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueVoid">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSiteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOriginalReferenceID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRegisterNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTransactionId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IssueVoidResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IssueVoidResult" type="tns:RetailTransactionStatusInfo2" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetailTransactionStatusInfo2" type="tns:RetailTransactionStatusInfo2" />
+      <s:element name="RetailBatchStatusInfo2" type="tns:RetailBatchStatusInfo2" />
+      <s:element name="RetailLevel2TransactionStatusInfo2" type="tns:RetailLevel2TransactionStatusInfo2" />
+      <s:element name="RetailEBTStatusInfo1" type="tns:RetailEBTStatusInfo1" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ApplyTipSoapIn">
+    <wsdl:part name="parameters" element="tns:ApplyTip" />
+  </wsdl:message>
+  <wsdl:message name="ApplyTipSoapOut">
+    <wsdl:part name="parameters" element="tns:ApplyTipResponse" />
+  </wsdl:message>
+  <wsdl:message name="IssueBatchSoapIn">
+    <wsdl:part name="parameters" element="tns:IssueBatch" />
+  </wsdl:message>
+  <wsdl:message name="IssueBatchSoapOut">
+    <wsdl:part name="parameters" element="tns:IssueBatchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IssueDebitSaleSoapIn">
+    <wsdl:part name="parameters" element="tns:IssueDebitSale" />
+  </wsdl:message>
+  <wsdl:message name="IssueDebitSaleSoapOut">
+    <wsdl:part name="parameters" element="tns:IssueDebitSaleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedDebitSaleMagensa10SoapIn">
+    <wsdl:part name="parameters" element="tns:IssueEncryptedDebitSaleMagensa10" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedDebitSaleMagensa10SoapOut">
+    <wsdl:part name="parameters" element="tns:IssueEncryptedDebitSaleMagensa10Response" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedDebitSaleMagensa20SoapIn">
+    <wsdl:part name="parameters" element="tns:IssueEncryptedDebitSaleMagensa20" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedDebitSaleMagensa20SoapOut">
+    <wsdl:part name="parameters" element="tns:IssueEncryptedDebitSaleMagensa20Response" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedDebitSaleMagTek10SoapIn">
+    <wsdl:part name="parameters" element="tns:IssueEncryptedDebitSaleMagTek10" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedDebitSaleMagTek10SoapOut">
+    <wsdl:part name="parameters" element="tns:IssueEncryptedDebitSaleMagTek10Response" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedDebitSaleMagTek20SoapIn">
+    <wsdl:part name="parameters" element="tns:IssueEncryptedDebitSaleMagTek20" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedDebitSaleMagTek20SoapOut">
+    <wsdl:part name="parameters" element="tns:IssueEncryptedDebitSaleMagTek20Response" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedLevel2SaleIdTechSoapIn">
+    <wsdl:part name="parameters" element="tns:IssueEncryptedLevel2SaleIdTech" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedLevel2SaleIdTechSoapOut">
+    <wsdl:part name="parameters" element="tns:IssueEncryptedLevel2SaleIdTechResponse" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedLevel2SaleMagensa10SoapIn">
+    <wsdl:part name="parameters" element="tns:IssueEncryptedLevel2SaleMagensa10" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedLevel2SaleMagensa10SoapOut">
+    <wsdl:part name="parameters" element="tns:IssueEncryptedLevel2SaleMagensa10Response" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedLevel2SaleMagensa20SoapIn">
+    <wsdl:part name="parameters" element="tns:IssueEncryptedLevel2SaleMagensa20" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedLevel2SaleMagensa20SoapOut">
+    <wsdl:part name="parameters" element="tns:IssueEncryptedLevel2SaleMagensa20Response" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedLevel2SaleMagTek10SoapIn">
+    <wsdl:part name="parameters" element="tns:IssueEncryptedLevel2SaleMagTek10" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedLevel2SaleMagTek10SoapOut">
+    <wsdl:part name="parameters" element="tns:IssueEncryptedLevel2SaleMagTek10Response" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedLevel2SaleMagTek20SoapIn">
+    <wsdl:part name="parameters" element="tns:IssueEncryptedLevel2SaleMagTek20" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedLevel2SaleMagTek20SoapOut">
+    <wsdl:part name="parameters" element="tns:IssueEncryptedLevel2SaleMagTek20Response" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedPreAuthIdTechSoapIn">
+    <wsdl:part name="parameters" element="tns:IssueEncryptedPreAuthIdTech" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedPreAuthIdTechSoapOut">
+    <wsdl:part name="parameters" element="tns:IssueEncryptedPreAuthIdTechResponse" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedPreAuthMagensa10SoapIn">
+    <wsdl:part name="parameters" element="tns:IssueEncryptedPreAuthMagensa10" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedPreAuthMagensa10SoapOut">
+    <wsdl:part name="parameters" element="tns:IssueEncryptedPreAuthMagensa10Response" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedPreAuthMagensa20SoapIn">
+    <wsdl:part name="parameters" element="tns:IssueEncryptedPreAuthMagensa20" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedPreAuthMagensa20SoapOut">
+    <wsdl:part name="parameters" element="tns:IssueEncryptedPreAuthMagensa20Response" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedPreAuthMagTek10SoapIn">
+    <wsdl:part name="parameters" element="tns:IssueEncryptedPreAuthMagTek10" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedPreAuthMagTek10SoapOut">
+    <wsdl:part name="parameters" element="tns:IssueEncryptedPreAuthMagTek10Response" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedPreAuthMagTek20SoapIn">
+    <wsdl:part name="parameters" element="tns:IssueEncryptedPreAuthMagTek20" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedPreAuthMagTek20SoapOut">
+    <wsdl:part name="parameters" element="tns:IssueEncryptedPreAuthMagTek20Response" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedSaleIdTechSoapIn">
+    <wsdl:part name="parameters" element="tns:IssueEncryptedSaleIdTech" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedSaleIdTechSoapOut">
+    <wsdl:part name="parameters" element="tns:IssueEncryptedSaleIdTechResponse" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedSaleMagensa10SoapIn">
+    <wsdl:part name="parameters" element="tns:IssueEncryptedSaleMagensa10" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedSaleMagensa10SoapOut">
+    <wsdl:part name="parameters" element="tns:IssueEncryptedSaleMagensa10Response" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedSaleMagensa20SoapIn">
+    <wsdl:part name="parameters" element="tns:IssueEncryptedSaleMagensa20" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedSaleMagensa20SoapOut">
+    <wsdl:part name="parameters" element="tns:IssueEncryptedSaleMagensa20Response" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedSaleMagTek10SoapIn">
+    <wsdl:part name="parameters" element="tns:IssueEncryptedSaleMagTek10" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedSaleMagTek10SoapOut">
+    <wsdl:part name="parameters" element="tns:IssueEncryptedSaleMagTek10Response" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedSaleMagTek20SoapIn">
+    <wsdl:part name="parameters" element="tns:IssueEncryptedSaleMagTek20" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedSaleMagTek20SoapOut">
+    <wsdl:part name="parameters" element="tns:IssueEncryptedSaleMagTek20Response" />
+  </wsdl:message>
+  <wsdl:message name="IssueKeyedEBTBalanceCheckSoapIn">
+    <wsdl:part name="parameters" element="tns:IssueKeyedEBTBalanceCheck" />
+  </wsdl:message>
+  <wsdl:message name="IssueKeyedEBTBalanceCheckSoapOut">
+    <wsdl:part name="parameters" element="tns:IssueKeyedEBTBalanceCheckResponse" />
+  </wsdl:message>
+  <wsdl:message name="IssueKeyedEBTCashBenefitSaleSoapIn">
+    <wsdl:part name="parameters" element="tns:IssueKeyedEBTCashBenefitSale" />
+  </wsdl:message>
+  <wsdl:message name="IssueKeyedEBTCashBenefitSaleSoapOut">
+    <wsdl:part name="parameters" element="tns:IssueKeyedEBTCashBenefitSaleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IssueKeyedEBTFoodStampRefundSoapIn">
+    <wsdl:part name="parameters" element="tns:IssueKeyedEBTFoodStampRefund" />
+  </wsdl:message>
+  <wsdl:message name="IssueKeyedEBTFoodStampRefundSoapOut">
+    <wsdl:part name="parameters" element="tns:IssueKeyedEBTFoodStampRefundResponse" />
+  </wsdl:message>
+  <wsdl:message name="IssueKeyedEBTFoodStampSaleSoapIn">
+    <wsdl:part name="parameters" element="tns:IssueKeyedEBTFoodStampSale" />
+  </wsdl:message>
+  <wsdl:message name="IssueKeyedEBTFoodStampSaleSoapOut">
+    <wsdl:part name="parameters" element="tns:IssueKeyedEBTFoodStampSaleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IssueKeyedForceSoapIn">
+    <wsdl:part name="parameters" element="tns:IssueKeyedForce" />
+  </wsdl:message>
+  <wsdl:message name="IssueKeyedForceSoapOut">
+    <wsdl:part name="parameters" element="tns:IssueKeyedForceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IssueKeyedLevel2SaleSoapIn">
+    <wsdl:part name="parameters" element="tns:IssueKeyedLevel2Sale" />
+  </wsdl:message>
+  <wsdl:message name="IssueKeyedLevel2SaleSoapOut">
+    <wsdl:part name="parameters" element="tns:IssueKeyedLevel2SaleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IssueKeyedPreAuthSoapIn">
+    <wsdl:part name="parameters" element="tns:IssueKeyedPreAuth" />
+  </wsdl:message>
+  <wsdl:message name="IssueKeyedPreAuthSoapOut">
+    <wsdl:part name="parameters" element="tns:IssueKeyedPreAuthResponse" />
+  </wsdl:message>
+  <wsdl:message name="IssueKeyedSaleSoapIn">
+    <wsdl:part name="parameters" element="tns:IssueKeyedSale" />
+  </wsdl:message>
+  <wsdl:message name="IssueKeyedSaleSoapOut">
+    <wsdl:part name="parameters" element="tns:IssueKeyedSaleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IssuePostAuthSoapIn">
+    <wsdl:part name="parameters" element="tns:IssuePostAuth" />
+  </wsdl:message>
+  <wsdl:message name="IssuePostAuthSoapOut">
+    <wsdl:part name="parameters" element="tns:IssuePostAuthResponse" />
+  </wsdl:message>
+  <wsdl:message name="IssuePreAuthVoidSoapIn">
+    <wsdl:part name="parameters" element="tns:IssuePreAuthVoid" />
+  </wsdl:message>
+  <wsdl:message name="IssuePreAuthVoidSoapOut">
+    <wsdl:part name="parameters" element="tns:IssuePreAuthVoidResponse" />
+  </wsdl:message>
+  <wsdl:message name="IssueRefundByReferenceSoapIn">
+    <wsdl:part name="parameters" element="tns:IssueRefundByReference" />
+  </wsdl:message>
+  <wsdl:message name="IssueRefundByReferenceSoapOut">
+    <wsdl:part name="parameters" element="tns:IssueRefundByReferenceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IssueRepeatSaleSoapIn">
+    <wsdl:part name="parameters" element="tns:IssueRepeatSale" />
+  </wsdl:message>
+  <wsdl:message name="IssueRepeatSaleSoapOut">
+    <wsdl:part name="parameters" element="tns:IssueRepeatSaleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IssueSwipedEBTBalanceCheckSoapIn">
+    <wsdl:part name="parameters" element="tns:IssueSwipedEBTBalanceCheck" />
+  </wsdl:message>
+  <wsdl:message name="IssueSwipedEBTBalanceCheckSoapOut">
+    <wsdl:part name="parameters" element="tns:IssueSwipedEBTBalanceCheckResponse" />
+  </wsdl:message>
+  <wsdl:message name="IssueSwipedEBTCashBenefitSaleSoapIn">
+    <wsdl:part name="parameters" element="tns:IssueSwipedEBTCashBenefitSale" />
+  </wsdl:message>
+  <wsdl:message name="IssueSwipedEBTCashBenefitSaleSoapOut">
+    <wsdl:part name="parameters" element="tns:IssueSwipedEBTCashBenefitSaleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IssueSwipedEBTFoodStampRefundSoapIn">
+    <wsdl:part name="parameters" element="tns:IssueSwipedEBTFoodStampRefund" />
+  </wsdl:message>
+  <wsdl:message name="IssueSwipedEBTFoodStampRefundSoapOut">
+    <wsdl:part name="parameters" element="tns:IssueSwipedEBTFoodStampRefundResponse" />
+  </wsdl:message>
+  <wsdl:message name="IssueSwipedEBTFoodStampSaleSoapIn">
+    <wsdl:part name="parameters" element="tns:IssueSwipedEBTFoodStampSale" />
+  </wsdl:message>
+  <wsdl:message name="IssueSwipedEBTFoodStampSaleSoapOut">
+    <wsdl:part name="parameters" element="tns:IssueSwipedEBTFoodStampSaleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IssueSwipedLevel2SaleSoapIn">
+    <wsdl:part name="parameters" element="tns:IssueSwipedLevel2Sale" />
+  </wsdl:message>
+  <wsdl:message name="IssueSwipedLevel2SaleSoapOut">
+    <wsdl:part name="parameters" element="tns:IssueSwipedLevel2SaleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IssueSwipedPreAuthSoapIn">
+    <wsdl:part name="parameters" element="tns:IssueSwipedPreAuth" />
+  </wsdl:message>
+  <wsdl:message name="IssueSwipedPreAuthSoapOut">
+    <wsdl:part name="parameters" element="tns:IssueSwipedPreAuthResponse" />
+  </wsdl:message>
+  <wsdl:message name="IssueSwipedSaleSoapIn">
+    <wsdl:part name="parameters" element="tns:IssueSwipedSale" />
+  </wsdl:message>
+  <wsdl:message name="IssueSwipedSaleSoapOut">
+    <wsdl:part name="parameters" element="tns:IssueSwipedSaleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IssueVoidSoapIn">
+    <wsdl:part name="parameters" element="tns:IssueVoid" />
+  </wsdl:message>
+  <wsdl:message name="IssueVoidSoapOut">
+    <wsdl:part name="parameters" element="tns:IssueVoidResponse" />
+  </wsdl:message>
+  <wsdl:message name="ApplyTipHttpPostIn">
+    <wsdl:part name="strName" type="s:string" />
+    <wsdl:part name="strSiteId" type="s:string" />
+    <wsdl:part name="strKey" type="s:string" />
+    <wsdl:part name="strOriginalReferenceID" type="s:string" />
+    <wsdl:part name="strTipAmount" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ApplyTipHttpPostOut">
+    <wsdl:part name="Body" element="tns:RetailTransactionStatusInfo2" />
+  </wsdl:message>
+  <wsdl:message name="IssueBatchHttpPostIn">
+    <wsdl:part name="strName" type="s:string" />
+    <wsdl:part name="strSiteId" type="s:string" />
+    <wsdl:part name="strKey" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IssueBatchHttpPostOut">
+    <wsdl:part name="Body" element="tns:RetailBatchStatusInfo2" />
+  </wsdl:message>
+  <wsdl:message name="IssueDebitSaleHttpPostIn">
+    <wsdl:part name="strName" type="s:string" />
+    <wsdl:part name="strSiteId" type="s:string" />
+    <wsdl:part name="strKey" type="s:string" />
+    <wsdl:part name="strOrderNumber" type="s:string" />
+    <wsdl:part name="strAmount" type="s:string" />
+    <wsdl:part name="strTrackData" type="s:string" />
+    <wsdl:part name="strPINBlock" type="s:string" />
+    <wsdl:part name="strKeySerialNumber" type="s:string" />
+    <wsdl:part name="strCardHolder" type="s:string" />
+    <wsdl:part name="strSurchargeDetail" type="s:string" />
+    <wsdl:part name="strCashbackInfo" type="s:string" />
+    <wsdl:part name="strAllowDuplicates" type="s:string" />
+    <wsdl:part name="strRegisterNum" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IssueDebitSaleHttpPostOut">
+    <wsdl:part name="Body" element="tns:RetailTransactionStatusInfo2" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedDebitSaleMagensa10HttpPostIn">
+    <wsdl:part name="strName" type="s:string" />
+    <wsdl:part name="strSiteId" type="s:string" />
+    <wsdl:part name="strKey" type="s:string" />
+    <wsdl:part name="strOrderNumber" type="s:string" />
+    <wsdl:part name="strAmount" type="s:string" />
+    <wsdl:part name="strEncTrack1" type="s:string" />
+    <wsdl:part name="strEncTrack2" type="s:string" />
+    <wsdl:part name="strEncTrack3" type="s:string" />
+    <wsdl:part name="strKSN" type="s:string" />
+    <wsdl:part name="strMPData" type="s:string" />
+    <wsdl:part name="strMPStatus" type="s:string" />
+    <wsdl:part name="strPINBlock" type="s:string" />
+    <wsdl:part name="strKeySerialNumber" type="s:string" />
+    <wsdl:part name="strCardHolder" type="s:string" />
+    <wsdl:part name="strSurchargeDetail" type="s:string" />
+    <wsdl:part name="strCashbackInfo" type="s:string" />
+    <wsdl:part name="strAllowDuplicates" type="s:string" />
+    <wsdl:part name="strRegisterNum" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedDebitSaleMagensa10HttpPostOut">
+    <wsdl:part name="Body" element="tns:RetailTransactionStatusInfo2" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedDebitSaleMagensa20HttpPostIn">
+    <wsdl:part name="strName" type="s:string" />
+    <wsdl:part name="strSiteId" type="s:string" />
+    <wsdl:part name="strKey" type="s:string" />
+    <wsdl:part name="strOrderNumber" type="s:string" />
+    <wsdl:part name="strAmount" type="s:string" />
+    <wsdl:part name="strMaskTrack1" type="s:string" />
+    <wsdl:part name="strMaskTrack2" type="s:string" />
+    <wsdl:part name="strMaskTrack3" type="s:string" />
+    <wsdl:part name="strDeviceSN" type="s:string" />
+    <wsdl:part name="strPINBlock" type="s:string" />
+    <wsdl:part name="strKeySerialNumber" type="s:string" />
+    <wsdl:part name="strSurchargeDetail" type="s:string" />
+    <wsdl:part name="strCashbackInfo" type="s:string" />
+    <wsdl:part name="strAllowDuplicates" type="s:string" />
+    <wsdl:part name="strRegisterNum" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedDebitSaleMagensa20HttpPostOut">
+    <wsdl:part name="Body" element="tns:RetailTransactionStatusInfo2" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedDebitSaleMagTek10HttpPostIn">
+    <wsdl:part name="strName" type="s:string" />
+    <wsdl:part name="strSiteId" type="s:string" />
+    <wsdl:part name="strKey" type="s:string" />
+    <wsdl:part name="strOrderNumber" type="s:string" />
+    <wsdl:part name="strAmount" type="s:string" />
+    <wsdl:part name="strEncTrack1" type="s:string" />
+    <wsdl:part name="strEncTrack2" type="s:string" />
+    <wsdl:part name="strEncTrack3" type="s:string" />
+    <wsdl:part name="strKSN" type="s:string" />
+    <wsdl:part name="strMPData" type="s:string" />
+    <wsdl:part name="strMPStatus" type="s:string" />
+    <wsdl:part name="strPINBlock" type="s:string" />
+    <wsdl:part name="strKeySerialNumber" type="s:string" />
+    <wsdl:part name="strCardHolder" type="s:string" />
+    <wsdl:part name="strSurchargeDetail" type="s:string" />
+    <wsdl:part name="strCashbackInfo" type="s:string" />
+    <wsdl:part name="strAllowDuplicates" type="s:string" />
+    <wsdl:part name="strRegisterNum" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedDebitSaleMagTek10HttpPostOut">
+    <wsdl:part name="Body" element="tns:RetailTransactionStatusInfo2" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedDebitSaleMagTek20HttpPostIn">
+    <wsdl:part name="strName" type="s:string" />
+    <wsdl:part name="strSiteId" type="s:string" />
+    <wsdl:part name="strKey" type="s:string" />
+    <wsdl:part name="strOrderNumber" type="s:string" />
+    <wsdl:part name="strAmount" type="s:string" />
+    <wsdl:part name="strMaskTrack1" type="s:string" />
+    <wsdl:part name="strMaskTrack2" type="s:string" />
+    <wsdl:part name="strMaskTrack3" type="s:string" />
+    <wsdl:part name="strDeviceSN" type="s:string" />
+    <wsdl:part name="strPINBlock" type="s:string" />
+    <wsdl:part name="strKeySerialNumber" type="s:string" />
+    <wsdl:part name="strSurchargeDetail" type="s:string" />
+    <wsdl:part name="strCashbackInfo" type="s:string" />
+    <wsdl:part name="strAllowDuplicates" type="s:string" />
+    <wsdl:part name="strRegisterNum" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedDebitSaleMagTek20HttpPostOut">
+    <wsdl:part name="Body" element="tns:RetailTransactionStatusInfo2" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedLevel2SaleIdTechHttpPostIn">
+    <wsdl:part name="strName" type="s:string" />
+    <wsdl:part name="strSiteId" type="s:string" />
+    <wsdl:part name="strKey" type="s:string" />
+    <wsdl:part name="strOrderNumber" type="s:string" />
+    <wsdl:part name="strAmount" type="s:string" />
+    <wsdl:part name="strEncTrack" type="s:string" />
+    <wsdl:part name="strDeviceSN" type="s:string" />
+    <wsdl:part name="strKSN" type="s:string" />
+    <wsdl:part name="strCustomerCode" type="s:string" />
+    <wsdl:part name="strPurchaseOrderNumber" type="s:string" />
+    <wsdl:part name="strTaxAmount" type="s:string" />
+    <wsdl:part name="strAllowDuplicates" type="s:string" />
+    <wsdl:part name="strRegisterNum" type="s:string" />
+    <wsdl:part name="strTransactionId" type="s:string" />
+    <wsdl:part name="strEntryMode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedLevel2SaleIdTechHttpPostOut">
+    <wsdl:part name="Body" element="tns:RetailLevel2TransactionStatusInfo2" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedLevel2SaleMagensa10HttpPostIn">
+    <wsdl:part name="strName" type="s:string" />
+    <wsdl:part name="strSiteId" type="s:string" />
+    <wsdl:part name="strKey" type="s:string" />
+    <wsdl:part name="strOrderNumber" type="s:string" />
+    <wsdl:part name="strAmount" type="s:string" />
+    <wsdl:part name="strEncTrack1" type="s:string" />
+    <wsdl:part name="strEncTrack2" type="s:string" />
+    <wsdl:part name="strEncTrack3" type="s:string" />
+    <wsdl:part name="strKSN" type="s:string" />
+    <wsdl:part name="strMPData" type="s:string" />
+    <wsdl:part name="strMPStatus" type="s:string" />
+    <wsdl:part name="strCardHolder" type="s:string" />
+    <wsdl:part name="strCustomerCode" type="s:string" />
+    <wsdl:part name="strPurchaseOrderNumber" type="s:string" />
+    <wsdl:part name="strTaxAmount" type="s:string" />
+    <wsdl:part name="strAllowDuplicates" type="s:string" />
+    <wsdl:part name="strRegisterNum" type="s:string" />
+    <wsdl:part name="strTransactionId" type="s:string" />
+    <wsdl:part name="strEntryMode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedLevel2SaleMagensa10HttpPostOut">
+    <wsdl:part name="Body" element="tns:RetailLevel2TransactionStatusInfo2" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedLevel2SaleMagensa20HttpPostIn">
+    <wsdl:part name="strName" type="s:string" />
+    <wsdl:part name="strSiteId" type="s:string" />
+    <wsdl:part name="strKey" type="s:string" />
+    <wsdl:part name="strOrderNumber" type="s:string" />
+    <wsdl:part name="strAmount" type="s:string" />
+    <wsdl:part name="strMaskTrack1" type="s:string" />
+    <wsdl:part name="strMaskTrack2" type="s:string" />
+    <wsdl:part name="strMaskTrack3" type="s:string" />
+    <wsdl:part name="strDeviceSN" type="s:string" />
+    <wsdl:part name="strCustomerCode" type="s:string" />
+    <wsdl:part name="strPurchaseOrderNumber" type="s:string" />
+    <wsdl:part name="strTaxAmount" type="s:string" />
+    <wsdl:part name="strAllowDuplicates" type="s:string" />
+    <wsdl:part name="strRegisterNum" type="s:string" />
+    <wsdl:part name="strTransactionId" type="s:string" />
+    <wsdl:part name="strEntryMode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedLevel2SaleMagensa20HttpPostOut">
+    <wsdl:part name="Body" element="tns:RetailLevel2TransactionStatusInfo2" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedLevel2SaleMagTek10HttpPostIn">
+    <wsdl:part name="strName" type="s:string" />
+    <wsdl:part name="strSiteId" type="s:string" />
+    <wsdl:part name="strKey" type="s:string" />
+    <wsdl:part name="strOrderNumber" type="s:string" />
+    <wsdl:part name="strAmount" type="s:string" />
+    <wsdl:part name="strEncTrack1" type="s:string" />
+    <wsdl:part name="strEncTrack2" type="s:string" />
+    <wsdl:part name="strEncTrack3" type="s:string" />
+    <wsdl:part name="strKSN" type="s:string" />
+    <wsdl:part name="strMPData" type="s:string" />
+    <wsdl:part name="strMPStatus" type="s:string" />
+    <wsdl:part name="strCardHolder" type="s:string" />
+    <wsdl:part name="strCustomerCode" type="s:string" />
+    <wsdl:part name="strPurchaseOrderNumber" type="s:string" />
+    <wsdl:part name="strTaxAmount" type="s:string" />
+    <wsdl:part name="strAllowDuplicates" type="s:string" />
+    <wsdl:part name="strRegisterNum" type="s:string" />
+    <wsdl:part name="strTransactionId" type="s:string" />
+    <wsdl:part name="strEntryMode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedLevel2SaleMagTek10HttpPostOut">
+    <wsdl:part name="Body" element="tns:RetailLevel2TransactionStatusInfo2" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedLevel2SaleMagTek20HttpPostIn">
+    <wsdl:part name="strName" type="s:string" />
+    <wsdl:part name="strSiteId" type="s:string" />
+    <wsdl:part name="strKey" type="s:string" />
+    <wsdl:part name="strOrderNumber" type="s:string" />
+    <wsdl:part name="strAmount" type="s:string" />
+    <wsdl:part name="strMaskTrack1" type="s:string" />
+    <wsdl:part name="strMaskTrack2" type="s:string" />
+    <wsdl:part name="strMaskTrack3" type="s:string" />
+    <wsdl:part name="strDeviceSN" type="s:string" />
+    <wsdl:part name="strCustomerCode" type="s:string" />
+    <wsdl:part name="strPurchaseOrderNumber" type="s:string" />
+    <wsdl:part name="strTaxAmount" type="s:string" />
+    <wsdl:part name="strAllowDuplicates" type="s:string" />
+    <wsdl:part name="strRegisterNum" type="s:string" />
+    <wsdl:part name="strTransactionId" type="s:string" />
+    <wsdl:part name="strEntryMode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedLevel2SaleMagTek20HttpPostOut">
+    <wsdl:part name="Body" element="tns:RetailLevel2TransactionStatusInfo2" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedPreAuthIdTechHttpPostIn">
+    <wsdl:part name="strName" type="s:string" />
+    <wsdl:part name="strSiteId" type="s:string" />
+    <wsdl:part name="strKey" type="s:string" />
+    <wsdl:part name="strOrderNumber" type="s:string" />
+    <wsdl:part name="strAmount" type="s:string" />
+    <wsdl:part name="strEncTrack" type="s:string" />
+    <wsdl:part name="strDeviceSN" type="s:string" />
+    <wsdl:part name="strKSN" type="s:string" />
+    <wsdl:part name="strAllowDuplicates" type="s:string" />
+    <wsdl:part name="strRegisterNum" type="s:string" />
+    <wsdl:part name="strTransactionId" type="s:string" />
+    <wsdl:part name="strEntryMode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedPreAuthIdTechHttpPostOut">
+    <wsdl:part name="Body" element="tns:RetailTransactionStatusInfo2" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedPreAuthMagensa10HttpPostIn">
+    <wsdl:part name="strName" type="s:string" />
+    <wsdl:part name="strSiteId" type="s:string" />
+    <wsdl:part name="strKey" type="s:string" />
+    <wsdl:part name="strOrderNumber" type="s:string" />
+    <wsdl:part name="strAmount" type="s:string" />
+    <wsdl:part name="strEncTrack1" type="s:string" />
+    <wsdl:part name="strEncTrack2" type="s:string" />
+    <wsdl:part name="strEncTrack3" type="s:string" />
+    <wsdl:part name="strKSN" type="s:string" />
+    <wsdl:part name="strMPData" type="s:string" />
+    <wsdl:part name="strMPStatus" type="s:string" />
+    <wsdl:part name="strCardHolder" type="s:string" />
+    <wsdl:part name="strAllowDuplicates" type="s:string" />
+    <wsdl:part name="strRegisterNum" type="s:string" />
+    <wsdl:part name="strTransactionId" type="s:string" />
+    <wsdl:part name="strEntryMode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedPreAuthMagensa10HttpPostOut">
+    <wsdl:part name="Body" element="tns:RetailTransactionStatusInfo2" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedPreAuthMagensa20HttpPostIn">
+    <wsdl:part name="strName" type="s:string" />
+    <wsdl:part name="strSiteId" type="s:string" />
+    <wsdl:part name="strKey" type="s:string" />
+    <wsdl:part name="strOrderNumber" type="s:string" />
+    <wsdl:part name="strAmount" type="s:string" />
+    <wsdl:part name="strMaskTrack1" type="s:string" />
+    <wsdl:part name="strMaskTrack2" type="s:string" />
+    <wsdl:part name="strMaskTrack3" type="s:string" />
+    <wsdl:part name="strDeviceSN" type="s:string" />
+    <wsdl:part name="strAllowDuplicates" type="s:string" />
+    <wsdl:part name="strRegisterNum" type="s:string" />
+    <wsdl:part name="strTransactionId" type="s:string" />
+    <wsdl:part name="strEntryMode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedPreAuthMagensa20HttpPostOut">
+    <wsdl:part name="Body" element="tns:RetailTransactionStatusInfo2" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedPreAuthMagTek10HttpPostIn">
+    <wsdl:part name="strName" type="s:string" />
+    <wsdl:part name="strSiteId" type="s:string" />
+    <wsdl:part name="strKey" type="s:string" />
+    <wsdl:part name="strOrderNumber" type="s:string" />
+    <wsdl:part name="strAmount" type="s:string" />
+    <wsdl:part name="strEncTrack1" type="s:string" />
+    <wsdl:part name="strEncTrack2" type="s:string" />
+    <wsdl:part name="strEncTrack3" type="s:string" />
+    <wsdl:part name="strKSN" type="s:string" />
+    <wsdl:part name="strMPData" type="s:string" />
+    <wsdl:part name="strMPStatus" type="s:string" />
+    <wsdl:part name="strCardHolder" type="s:string" />
+    <wsdl:part name="strAllowDuplicates" type="s:string" />
+    <wsdl:part name="strRegisterNum" type="s:string" />
+    <wsdl:part name="strTransactionId" type="s:string" />
+    <wsdl:part name="strEntryMode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedPreAuthMagTek10HttpPostOut">
+    <wsdl:part name="Body" element="tns:RetailTransactionStatusInfo2" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedPreAuthMagTek20HttpPostIn">
+    <wsdl:part name="strName" type="s:string" />
+    <wsdl:part name="strSiteId" type="s:string" />
+    <wsdl:part name="strKey" type="s:string" />
+    <wsdl:part name="strOrderNumber" type="s:string" />
+    <wsdl:part name="strAmount" type="s:string" />
+    <wsdl:part name="strMaskTrack1" type="s:string" />
+    <wsdl:part name="strMaskTrack2" type="s:string" />
+    <wsdl:part name="strMaskTrack3" type="s:string" />
+    <wsdl:part name="strDeviceSN" type="s:string" />
+    <wsdl:part name="strAllowDuplicates" type="s:string" />
+    <wsdl:part name="strRegisterNum" type="s:string" />
+    <wsdl:part name="strTransactionId" type="s:string" />
+    <wsdl:part name="strEntryMode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedPreAuthMagTek20HttpPostOut">
+    <wsdl:part name="Body" element="tns:RetailTransactionStatusInfo2" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedSaleIdTechHttpPostIn">
+    <wsdl:part name="strName" type="s:string" />
+    <wsdl:part name="strSiteId" type="s:string" />
+    <wsdl:part name="strKey" type="s:string" />
+    <wsdl:part name="strOrderNumber" type="s:string" />
+    <wsdl:part name="strAmount" type="s:string" />
+    <wsdl:part name="strEncTrack" type="s:string" />
+    <wsdl:part name="strDeviceSN" type="s:string" />
+    <wsdl:part name="strKSN" type="s:string" />
+    <wsdl:part name="strAllowDuplicates" type="s:string" />
+    <wsdl:part name="strRegisterNum" type="s:string" />
+    <wsdl:part name="strTransactionId" type="s:string" />
+    <wsdl:part name="strEntryMode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedSaleIdTechHttpPostOut">
+    <wsdl:part name="Body" element="tns:RetailTransactionStatusInfo2" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedSaleMagensa10HttpPostIn">
+    <wsdl:part name="strName" type="s:string" />
+    <wsdl:part name="strSiteId" type="s:string" />
+    <wsdl:part name="strKey" type="s:string" />
+    <wsdl:part name="strOrderNumber" type="s:string" />
+    <wsdl:part name="strAmount" type="s:string" />
+    <wsdl:part name="strEncTrack1" type="s:string" />
+    <wsdl:part name="strEncTrack2" type="s:string" />
+    <wsdl:part name="strEncTrack3" type="s:string" />
+    <wsdl:part name="strKSN" type="s:string" />
+    <wsdl:part name="strMPData" type="s:string" />
+    <wsdl:part name="strMPStatus" type="s:string" />
+    <wsdl:part name="strCardHolder" type="s:string" />
+    <wsdl:part name="strAllowDuplicates" type="s:string" />
+    <wsdl:part name="strRegisterNum" type="s:string" />
+    <wsdl:part name="strTransactionId" type="s:string" />
+    <wsdl:part name="strEntryMode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedSaleMagensa10HttpPostOut">
+    <wsdl:part name="Body" element="tns:RetailTransactionStatusInfo2" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedSaleMagensa20HttpPostIn">
+    <wsdl:part name="strName" type="s:string" />
+    <wsdl:part name="strSiteId" type="s:string" />
+    <wsdl:part name="strKey" type="s:string" />
+    <wsdl:part name="strOrderNumber" type="s:string" />
+    <wsdl:part name="strAmount" type="s:string" />
+    <wsdl:part name="strMaskTrack1" type="s:string" />
+    <wsdl:part name="strMaskTrack2" type="s:string" />
+    <wsdl:part name="strMaskTrack3" type="s:string" />
+    <wsdl:part name="strDeviceSN" type="s:string" />
+    <wsdl:part name="strAllowDuplicates" type="s:string" />
+    <wsdl:part name="strRegisterNum" type="s:string" />
+    <wsdl:part name="strTransactionId" type="s:string" />
+    <wsdl:part name="strEntryMode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedSaleMagensa20HttpPostOut">
+    <wsdl:part name="Body" element="tns:RetailTransactionStatusInfo2" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedSaleMagTek10HttpPostIn">
+    <wsdl:part name="strName" type="s:string" />
+    <wsdl:part name="strSiteId" type="s:string" />
+    <wsdl:part name="strKey" type="s:string" />
+    <wsdl:part name="strOrderNumber" type="s:string" />
+    <wsdl:part name="strAmount" type="s:string" />
+    <wsdl:part name="strEncTrack1" type="s:string" />
+    <wsdl:part name="strEncTrack2" type="s:string" />
+    <wsdl:part name="strEncTrack3" type="s:string" />
+    <wsdl:part name="strKSN" type="s:string" />
+    <wsdl:part name="strMPData" type="s:string" />
+    <wsdl:part name="strMPStatus" type="s:string" />
+    <wsdl:part name="strCardHolder" type="s:string" />
+    <wsdl:part name="strAllowDuplicates" type="s:string" />
+    <wsdl:part name="strRegisterNum" type="s:string" />
+    <wsdl:part name="strTransactionId" type="s:string" />
+    <wsdl:part name="strEntryMode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedSaleMagTek10HttpPostOut">
+    <wsdl:part name="Body" element="tns:RetailTransactionStatusInfo2" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedSaleMagTek20HttpPostIn">
+    <wsdl:part name="strName" type="s:string" />
+    <wsdl:part name="strSiteId" type="s:string" />
+    <wsdl:part name="strKey" type="s:string" />
+    <wsdl:part name="strOrderNumber" type="s:string" />
+    <wsdl:part name="strAmount" type="s:string" />
+    <wsdl:part name="strMaskTrack1" type="s:string" />
+    <wsdl:part name="strMaskTrack2" type="s:string" />
+    <wsdl:part name="strMaskTrack3" type="s:string" />
+    <wsdl:part name="strDeviceSN" type="s:string" />
+    <wsdl:part name="strAllowDuplicates" type="s:string" />
+    <wsdl:part name="strRegisterNum" type="s:string" />
+    <wsdl:part name="strTransactionId" type="s:string" />
+    <wsdl:part name="strEntryMode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IssueEncryptedSaleMagTek20HttpPostOut">
+    <wsdl:part name="Body" element="tns:RetailTransactionStatusInfo2" />
+  </wsdl:message>
+  <wsdl:message name="IssueKeyedEBTBalanceCheckHttpPostIn">
+    <wsdl:part name="strName" type="s:string" />
+    <wsdl:part name="strSiteId" type="s:string" />
+    <wsdl:part name="strKey" type="s:string" />
+    <wsdl:part name="strOrderNumber" type="s:string" />
+    <wsdl:part name="strPAN" type="s:string" />
+    <wsdl:part name="strExpDate" type="s:string" />
+    <wsdl:part name="strPINBlock" type="s:string" />
+    <wsdl:part name="strKeySerialNumber" type="s:string" />
+    <wsdl:part name="strBasisType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IssueKeyedEBTBalanceCheckHttpPostOut">
+    <wsdl:part name="Body" element="tns:RetailEBTStatusInfo1" />
+  </wsdl:message>
+  <wsdl:message name="IssueKeyedEBTCashBenefitSaleHttpPostIn">
+    <wsdl:part name="strName" type="s:string" />
+    <wsdl:part name="strSiteId" type="s:string" />
+    <wsdl:part name="strKey" type="s:string" />
+    <wsdl:part name="strOrderNumber" type="s:string" />
+    <wsdl:part name="strAmount" type="s:string" />
+    <wsdl:part name="strPAN" type="s:string" />
+    <wsdl:part name="strExpDate" type="s:string" />
+    <wsdl:part name="strPINBlock" type="s:string" />
+    <wsdl:part name="strKeySerialNumber" type="s:string" />
+    <wsdl:part name="strCardHolder" type="s:string" />
+    <wsdl:part name="strSurchargeDetail" type="s:string" />
+    <wsdl:part name="strCashbackInfo" type="s:string" />
+    <wsdl:part name="strAllowDuplicates" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IssueKeyedEBTCashBenefitSaleHttpPostOut">
+    <wsdl:part name="Body" element="tns:RetailEBTStatusInfo1" />
+  </wsdl:message>
+  <wsdl:message name="IssueKeyedEBTFoodStampRefundHttpPostIn">
+    <wsdl:part name="strName" type="s:string" />
+    <wsdl:part name="strSiteId" type="s:string" />
+    <wsdl:part name="strKey" type="s:string" />
+    <wsdl:part name="strOrderNumber" type="s:string" />
+    <wsdl:part name="strAmount" type="s:string" />
+    <wsdl:part name="strPAN" type="s:string" />
+    <wsdl:part name="strExpDate" type="s:string" />
+    <wsdl:part name="strPINBlock" type="s:string" />
+    <wsdl:part name="strKeySerialNumber" type="s:string" />
+    <wsdl:part name="strCardHolder" type="s:string" />
+    <wsdl:part name="strSurchargeDetail" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IssueKeyedEBTFoodStampRefundHttpPostOut">
+    <wsdl:part name="Body" element="tns:RetailEBTStatusInfo1" />
+  </wsdl:message>
+  <wsdl:message name="IssueKeyedEBTFoodStampSaleHttpPostIn">
+    <wsdl:part name="strName" type="s:string" />
+    <wsdl:part name="strSiteId" type="s:string" />
+    <wsdl:part name="strKey" type="s:string" />
+    <wsdl:part name="strOrderNumber" type="s:string" />
+    <wsdl:part name="strAmount" type="s:string" />
+    <wsdl:part name="strPAN" type="s:string" />
+    <wsdl:part name="strExpDate" type="s:string" />
+    <wsdl:part name="strPINBlock" type="s:string" />
+    <wsdl:part name="strKeySerialNumber" type="s:string" />
+    <wsdl:part name="strCardHolder" type="s:string" />
+    <wsdl:part name="strSurchargeDetail" type="s:string" />
+    <wsdl:part name="strAllowDuplicates" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IssueKeyedEBTFoodStampSaleHttpPostOut">
+    <wsdl:part name="Body" element="tns:RetailEBTStatusInfo1" />
+  </wsdl:message>
+  <wsdl:message name="IssueKeyedForceHttpPostIn">
+    <wsdl:part name="strName" type="s:string" />
+    <wsdl:part name="strSiteId" type="s:string" />
+    <wsdl:part name="strKey" type="s:string" />
+    <wsdl:part name="strOrderNumber" type="s:string" />
+    <wsdl:part name="strAuthCode" type="s:string" />
+    <wsdl:part name="strAmount" type="s:string" />
+    <wsdl:part name="strPAN" type="s:string" />
+    <wsdl:part name="strExpDate" type="s:string" />
+    <wsdl:part name="strCardHolder" type="s:string" />
+    <wsdl:part name="strRegisterNum" type="s:string" />
+    <wsdl:part name="strTransactionId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IssueKeyedForceHttpPostOut">
+    <wsdl:part name="Body" element="tns:RetailTransactionStatusInfo2" />
+  </wsdl:message>
+  <wsdl:message name="IssueKeyedLevel2SaleHttpPostIn">
+    <wsdl:part name="strName" type="s:string" />
+    <wsdl:part name="strSiteId" type="s:string" />
+    <wsdl:part name="strKey" type="s:string" />
+    <wsdl:part name="strOrderNumber" type="s:string" />
+    <wsdl:part name="strAmount" type="s:string" />
+    <wsdl:part name="strPAN" type="s:string" />
+    <wsdl:part name="strExpDate" type="s:string" />
+    <wsdl:part name="strCardHolder" type="s:string" />
+    <wsdl:part name="strAVSStreetAddress" type="s:string" />
+    <wsdl:part name="strAVSZipCode" type="s:string" />
+    <wsdl:part name="strCVCode" type="s:string" />
+    <wsdl:part name="strCustomerCode" type="s:string" />
+    <wsdl:part name="strPurchaseOrderNumber" type="s:string" />
+    <wsdl:part name="strTaxAmount" type="s:string" />
+    <wsdl:part name="strAllowDuplicates" type="s:string" />
+    <wsdl:part name="strRegisterNum" type="s:string" />
+    <wsdl:part name="strTransactionId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IssueKeyedLevel2SaleHttpPostOut">
+    <wsdl:part name="Body" element="tns:RetailLevel2TransactionStatusInfo2" />
+  </wsdl:message>
+  <wsdl:message name="IssueKeyedPreAuthHttpPostIn">
+    <wsdl:part name="strName" type="s:string" />
+    <wsdl:part name="strSiteId" type="s:string" />
+    <wsdl:part name="strKey" type="s:string" />
+    <wsdl:part name="strOrderNumber" type="s:string" />
+    <wsdl:part name="strAmount" type="s:string" />
+    <wsdl:part name="strPAN" type="s:string" />
+    <wsdl:part name="strExpDate" type="s:string" />
+    <wsdl:part name="strCardHolder" type="s:string" />
+    <wsdl:part name="strAVSStreetAddress" type="s:string" />
+    <wsdl:part name="strAVSZipCode" type="s:string" />
+    <wsdl:part name="strCVCode" type="s:string" />
+    <wsdl:part name="strAllowDuplicates" type="s:string" />
+    <wsdl:part name="strRegisterNum" type="s:string" />
+    <wsdl:part name="strTransactionId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IssueKeyedPreAuthHttpPostOut">
+    <wsdl:part name="Body" element="tns:RetailTransactionStatusInfo2" />
+  </wsdl:message>
+  <wsdl:message name="IssueKeyedSaleHttpPostIn">
+    <wsdl:part name="strName" type="s:string" />
+    <wsdl:part name="strSiteId" type="s:string" />
+    <wsdl:part name="strKey" type="s:string" />
+    <wsdl:part name="strOrderNumber" type="s:string" />
+    <wsdl:part name="strAmount" type="s:string" />
+    <wsdl:part name="strPAN" type="s:string" />
+    <wsdl:part name="strExpDate" type="s:string" />
+    <wsdl:part name="strCardHolder" type="s:string" />
+    <wsdl:part name="strAVSStreetAddress" type="s:string" />
+    <wsdl:part name="strAVSZipCode" type="s:string" />
+    <wsdl:part name="strCVCode" type="s:string" />
+    <wsdl:part name="strAllowDuplicates" type="s:string" />
+    <wsdl:part name="strRegisterNum" type="s:string" />
+    <wsdl:part name="strTransactionId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IssueKeyedSaleHttpPostOut">
+    <wsdl:part name="Body" element="tns:RetailTransactionStatusInfo2" />
+  </wsdl:message>
+  <wsdl:message name="IssuePostAuthHttpPostIn">
+    <wsdl:part name="strName" type="s:string" />
+    <wsdl:part name="strSiteId" type="s:string" />
+    <wsdl:part name="strKey" type="s:string" />
+    <wsdl:part name="strOrderNumber" type="s:string" />
+    <wsdl:part name="strOriginalReferenceID" type="s:string" />
+    <wsdl:part name="strAmount" type="s:string" />
+    <wsdl:part name="strAllowDuplicates" type="s:string" />
+    <wsdl:part name="strRegisterNum" type="s:string" />
+    <wsdl:part name="strTransactionId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IssuePostAuthHttpPostOut">
+    <wsdl:part name="Body" element="tns:RetailTransactionStatusInfo2" />
+  </wsdl:message>
+  <wsdl:message name="IssuePreAuthVoidHttpPostIn">
+    <wsdl:part name="strName" type="s:string" />
+    <wsdl:part name="strSiteId" type="s:string" />
+    <wsdl:part name="strKey" type="s:string" />
+    <wsdl:part name="strOriginalReferenceID" type="s:string" />
+    <wsdl:part name="strOriginalAmount" type="s:string" />
+    <wsdl:part name="strRegisterNum" type="s:string" />
+    <wsdl:part name="strTransactionId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IssuePreAuthVoidHttpPostOut">
+    <wsdl:part name="Body" element="tns:RetailTransactionStatusInfo2" />
+  </wsdl:message>
+  <wsdl:message name="IssueRefundByReferenceHttpPostIn">
+    <wsdl:part name="strName" type="s:string" />
+    <wsdl:part name="strSiteId" type="s:string" />
+    <wsdl:part name="strKey" type="s:string" />
+    <wsdl:part name="strOrderNumber" type="s:string" />
+    <wsdl:part name="strOriginalReferenceID" type="s:string" />
+    <wsdl:part name="strOverrideAmount" type="s:string" />
+    <wsdl:part name="strCardHolder" type="s:string" />
+    <wsdl:part name="strRegisterNum" type="s:string" />
+    <wsdl:part name="strTransactionId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IssueRefundByReferenceHttpPostOut">
+    <wsdl:part name="Body" element="tns:RetailTransactionStatusInfo2" />
+  </wsdl:message>
+  <wsdl:message name="IssueRepeatSaleHttpPostIn">
+    <wsdl:part name="strName" type="s:string" />
+    <wsdl:part name="strSiteId" type="s:string" />
+    <wsdl:part name="strKey" type="s:string" />
+    <wsdl:part name="strOrderNumber" type="s:string" />
+    <wsdl:part name="strOriginalReferenceID" type="s:string" />
+    <wsdl:part name="strOverrideAmount" type="s:string" />
+    <wsdl:part name="strCardHolder" type="s:string" />
+    <wsdl:part name="strExpDate" type="s:string" />
+    <wsdl:part name="strAVSStreetAddress" type="s:string" />
+    <wsdl:part name="strAVSZipCode" type="s:string" />
+    <wsdl:part name="strAllowDuplicates" type="s:string" />
+    <wsdl:part name="strRegisterNum" type="s:string" />
+    <wsdl:part name="strTransactionId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IssueRepeatSaleHttpPostOut">
+    <wsdl:part name="Body" element="tns:RetailTransactionStatusInfo2" />
+  </wsdl:message>
+  <wsdl:message name="IssueSwipedEBTBalanceCheckHttpPostIn">
+    <wsdl:part name="strName" type="s:string" />
+    <wsdl:part name="strSiteId" type="s:string" />
+    <wsdl:part name="strKey" type="s:string" />
+    <wsdl:part name="strOrderNumber" type="s:string" />
+    <wsdl:part name="strTrackData" type="s:string" />
+    <wsdl:part name="strPINBlock" type="s:string" />
+    <wsdl:part name="strKeySerialNumber" type="s:string" />
+    <wsdl:part name="strBasisType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IssueSwipedEBTBalanceCheckHttpPostOut">
+    <wsdl:part name="Body" element="tns:RetailEBTStatusInfo1" />
+  </wsdl:message>
+  <wsdl:message name="IssueSwipedEBTCashBenefitSaleHttpPostIn">
+    <wsdl:part name="strName" type="s:string" />
+    <wsdl:part name="strSiteId" type="s:string" />
+    <wsdl:part name="strKey" type="s:string" />
+    <wsdl:part name="strOrderNumber" type="s:string" />
+    <wsdl:part name="strAmount" type="s:string" />
+    <wsdl:part name="strTrackData" type="s:string" />
+    <wsdl:part name="strPINBlock" type="s:string" />
+    <wsdl:part name="strKeySerialNumber" type="s:string" />
+    <wsdl:part name="strOverrideCardHolder" type="s:string" />
+    <wsdl:part name="strSurchargeDetail" type="s:string" />
+    <wsdl:part name="strCashbackInfo" type="s:string" />
+    <wsdl:part name="strAllowDuplicates" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IssueSwipedEBTCashBenefitSaleHttpPostOut">
+    <wsdl:part name="Body" element="tns:RetailEBTStatusInfo1" />
+  </wsdl:message>
+  <wsdl:message name="IssueSwipedEBTFoodStampRefundHttpPostIn">
+    <wsdl:part name="strName" type="s:string" />
+    <wsdl:part name="strSiteId" type="s:string" />
+    <wsdl:part name="strKey" type="s:string" />
+    <wsdl:part name="strOrderNumber" type="s:string" />
+    <wsdl:part name="strAmount" type="s:string" />
+    <wsdl:part name="strTrackData" type="s:string" />
+    <wsdl:part name="strPINBlock" type="s:string" />
+    <wsdl:part name="strKeySerialNumber" type="s:string" />
+    <wsdl:part name="strOverrideCardHolder" type="s:string" />
+    <wsdl:part name="strSurchargeDetail" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IssueSwipedEBTFoodStampRefundHttpPostOut">
+    <wsdl:part name="Body" element="tns:RetailEBTStatusInfo1" />
+  </wsdl:message>
+  <wsdl:message name="IssueSwipedEBTFoodStampSaleHttpPostIn">
+    <wsdl:part name="strName" type="s:string" />
+    <wsdl:part name="strSiteId" type="s:string" />
+    <wsdl:part name="strKey" type="s:string" />
+    <wsdl:part name="strOrderNumber" type="s:string" />
+    <wsdl:part name="strAmount" type="s:string" />
+    <wsdl:part name="strTrackData" type="s:string" />
+    <wsdl:part name="strPINBlock" type="s:string" />
+    <wsdl:part name="strKeySerialNumber" type="s:string" />
+    <wsdl:part name="strOverrideCardHolder" type="s:string" />
+    <wsdl:part name="strSurchargeDetail" type="s:string" />
+    <wsdl:part name="strAllowDuplicates" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IssueSwipedEBTFoodStampSaleHttpPostOut">
+    <wsdl:part name="Body" element="tns:RetailEBTStatusInfo1" />
+  </wsdl:message>
+  <wsdl:message name="IssueSwipedLevel2SaleHttpPostIn">
+    <wsdl:part name="strName" type="s:string" />
+    <wsdl:part name="strSiteId" type="s:string" />
+    <wsdl:part name="strKey" type="s:string" />
+    <wsdl:part name="strOrderNumber" type="s:string" />
+    <wsdl:part name="strAmount" type="s:string" />
+    <wsdl:part name="strTrackData" type="s:string" />
+    <wsdl:part name="strCustomerCode" type="s:string" />
+    <wsdl:part name="strPurchaseOrderNumber" type="s:string" />
+    <wsdl:part name="strTaxAmount" type="s:string" />
+    <wsdl:part name="strAllowDuplicates" type="s:string" />
+    <wsdl:part name="strRegisterNum" type="s:string" />
+    <wsdl:part name="strTransactionId" type="s:string" />
+    <wsdl:part name="strEntryMode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IssueSwipedLevel2SaleHttpPostOut">
+    <wsdl:part name="Body" element="tns:RetailLevel2TransactionStatusInfo2" />
+  </wsdl:message>
+  <wsdl:message name="IssueSwipedPreAuthHttpPostIn">
+    <wsdl:part name="strName" type="s:string" />
+    <wsdl:part name="strSiteId" type="s:string" />
+    <wsdl:part name="strKey" type="s:string" />
+    <wsdl:part name="strOrderNumber" type="s:string" />
+    <wsdl:part name="strAmount" type="s:string" />
+    <wsdl:part name="strTrackData" type="s:string" />
+    <wsdl:part name="strAllowDuplicates" type="s:string" />
+    <wsdl:part name="strRegisterNum" type="s:string" />
+    <wsdl:part name="strTransactionId" type="s:string" />
+    <wsdl:part name="strEntryMode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IssueSwipedPreAuthHttpPostOut">
+    <wsdl:part name="Body" element="tns:RetailTransactionStatusInfo2" />
+  </wsdl:message>
+  <wsdl:message name="IssueSwipedSaleHttpPostIn">
+    <wsdl:part name="strName" type="s:string" />
+    <wsdl:part name="strSiteId" type="s:string" />
+    <wsdl:part name="strKey" type="s:string" />
+    <wsdl:part name="strOrderNumber" type="s:string" />
+    <wsdl:part name="strAmount" type="s:string" />
+    <wsdl:part name="strTrackData" type="s:string" />
+    <wsdl:part name="strAllowDuplicates" type="s:string" />
+    <wsdl:part name="strRegisterNum" type="s:string" />
+    <wsdl:part name="strTransactionId" type="s:string" />
+    <wsdl:part name="strEntryMode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IssueSwipedSaleHttpPostOut">
+    <wsdl:part name="Body" element="tns:RetailTransactionStatusInfo2" />
+  </wsdl:message>
+  <wsdl:message name="IssueVoidHttpPostIn">
+    <wsdl:part name="strName" type="s:string" />
+    <wsdl:part name="strSiteId" type="s:string" />
+    <wsdl:part name="strKey" type="s:string" />
+    <wsdl:part name="strOriginalReferenceID" type="s:string" />
+    <wsdl:part name="strRegisterNum" type="s:string" />
+    <wsdl:part name="strTransactionId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IssueVoidHttpPostOut">
+    <wsdl:part name="Body" element="tns:RetailTransactionStatusInfo2" />
+  </wsdl:message>
+  <wsdl:portType name="TXRetail31Soap">
+    <wsdl:operation name="ApplyTip">
+      <wsdl:input message="tns:ApplyTipSoapIn" />
+      <wsdl:output message="tns:ApplyTipSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueBatch">
+      <wsdl:input message="tns:IssueBatchSoapIn" />
+      <wsdl:output message="tns:IssueBatchSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueDebitSale">
+      <wsdl:input message="tns:IssueDebitSaleSoapIn" />
+      <wsdl:output message="tns:IssueDebitSaleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedDebitSaleMagensa10">
+      <wsdl:input message="tns:IssueEncryptedDebitSaleMagensa10SoapIn" />
+      <wsdl:output message="tns:IssueEncryptedDebitSaleMagensa10SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedDebitSaleMagensa20">
+      <wsdl:input message="tns:IssueEncryptedDebitSaleMagensa20SoapIn" />
+      <wsdl:output message="tns:IssueEncryptedDebitSaleMagensa20SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedDebitSaleMagTek10">
+      <wsdl:input message="tns:IssueEncryptedDebitSaleMagTek10SoapIn" />
+      <wsdl:output message="tns:IssueEncryptedDebitSaleMagTek10SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedDebitSaleMagTek20">
+      <wsdl:input message="tns:IssueEncryptedDebitSaleMagTek20SoapIn" />
+      <wsdl:output message="tns:IssueEncryptedDebitSaleMagTek20SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedLevel2SaleIdTech">
+      <wsdl:input message="tns:IssueEncryptedLevel2SaleIdTechSoapIn" />
+      <wsdl:output message="tns:IssueEncryptedLevel2SaleIdTechSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedLevel2SaleMagensa10">
+      <wsdl:input message="tns:IssueEncryptedLevel2SaleMagensa10SoapIn" />
+      <wsdl:output message="tns:IssueEncryptedLevel2SaleMagensa10SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedLevel2SaleMagensa20">
+      <wsdl:input message="tns:IssueEncryptedLevel2SaleMagensa20SoapIn" />
+      <wsdl:output message="tns:IssueEncryptedLevel2SaleMagensa20SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedLevel2SaleMagTek10">
+      <wsdl:input message="tns:IssueEncryptedLevel2SaleMagTek10SoapIn" />
+      <wsdl:output message="tns:IssueEncryptedLevel2SaleMagTek10SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedLevel2SaleMagTek20">
+      <wsdl:input message="tns:IssueEncryptedLevel2SaleMagTek20SoapIn" />
+      <wsdl:output message="tns:IssueEncryptedLevel2SaleMagTek20SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedPreAuthIdTech">
+      <wsdl:input message="tns:IssueEncryptedPreAuthIdTechSoapIn" />
+      <wsdl:output message="tns:IssueEncryptedPreAuthIdTechSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedPreAuthMagensa10">
+      <wsdl:input message="tns:IssueEncryptedPreAuthMagensa10SoapIn" />
+      <wsdl:output message="tns:IssueEncryptedPreAuthMagensa10SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedPreAuthMagensa20">
+      <wsdl:input message="tns:IssueEncryptedPreAuthMagensa20SoapIn" />
+      <wsdl:output message="tns:IssueEncryptedPreAuthMagensa20SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedPreAuthMagTek10">
+      <wsdl:input message="tns:IssueEncryptedPreAuthMagTek10SoapIn" />
+      <wsdl:output message="tns:IssueEncryptedPreAuthMagTek10SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedPreAuthMagTek20">
+      <wsdl:input message="tns:IssueEncryptedPreAuthMagTek20SoapIn" />
+      <wsdl:output message="tns:IssueEncryptedPreAuthMagTek20SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedSaleIdTech">
+      <wsdl:input message="tns:IssueEncryptedSaleIdTechSoapIn" />
+      <wsdl:output message="tns:IssueEncryptedSaleIdTechSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedSaleMagensa10">
+      <wsdl:input message="tns:IssueEncryptedSaleMagensa10SoapIn" />
+      <wsdl:output message="tns:IssueEncryptedSaleMagensa10SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedSaleMagensa20">
+      <wsdl:input message="tns:IssueEncryptedSaleMagensa20SoapIn" />
+      <wsdl:output message="tns:IssueEncryptedSaleMagensa20SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedSaleMagTek10">
+      <wsdl:input message="tns:IssueEncryptedSaleMagTek10SoapIn" />
+      <wsdl:output message="tns:IssueEncryptedSaleMagTek10SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedSaleMagTek20">
+      <wsdl:input message="tns:IssueEncryptedSaleMagTek20SoapIn" />
+      <wsdl:output message="tns:IssueEncryptedSaleMagTek20SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueKeyedEBTBalanceCheck">
+      <wsdl:input message="tns:IssueKeyedEBTBalanceCheckSoapIn" />
+      <wsdl:output message="tns:IssueKeyedEBTBalanceCheckSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueKeyedEBTCashBenefitSale">
+      <wsdl:input message="tns:IssueKeyedEBTCashBenefitSaleSoapIn" />
+      <wsdl:output message="tns:IssueKeyedEBTCashBenefitSaleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueKeyedEBTFoodStampRefund">
+      <wsdl:input message="tns:IssueKeyedEBTFoodStampRefundSoapIn" />
+      <wsdl:output message="tns:IssueKeyedEBTFoodStampRefundSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueKeyedEBTFoodStampSale">
+      <wsdl:input message="tns:IssueKeyedEBTFoodStampSaleSoapIn" />
+      <wsdl:output message="tns:IssueKeyedEBTFoodStampSaleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueKeyedForce">
+      <wsdl:input message="tns:IssueKeyedForceSoapIn" />
+      <wsdl:output message="tns:IssueKeyedForceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueKeyedLevel2Sale">
+      <wsdl:input message="tns:IssueKeyedLevel2SaleSoapIn" />
+      <wsdl:output message="tns:IssueKeyedLevel2SaleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueKeyedPreAuth">
+      <wsdl:input message="tns:IssueKeyedPreAuthSoapIn" />
+      <wsdl:output message="tns:IssueKeyedPreAuthSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueKeyedSale">
+      <wsdl:input message="tns:IssueKeyedSaleSoapIn" />
+      <wsdl:output message="tns:IssueKeyedSaleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssuePostAuth">
+      <wsdl:input message="tns:IssuePostAuthSoapIn" />
+      <wsdl:output message="tns:IssuePostAuthSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssuePreAuthVoid">
+      <wsdl:input message="tns:IssuePreAuthVoidSoapIn" />
+      <wsdl:output message="tns:IssuePreAuthVoidSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueRefundByReference">
+      <wsdl:input message="tns:IssueRefundByReferenceSoapIn" />
+      <wsdl:output message="tns:IssueRefundByReferenceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueRepeatSale">
+      <wsdl:input message="tns:IssueRepeatSaleSoapIn" />
+      <wsdl:output message="tns:IssueRepeatSaleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueSwipedEBTBalanceCheck">
+      <wsdl:input message="tns:IssueSwipedEBTBalanceCheckSoapIn" />
+      <wsdl:output message="tns:IssueSwipedEBTBalanceCheckSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueSwipedEBTCashBenefitSale">
+      <wsdl:input message="tns:IssueSwipedEBTCashBenefitSaleSoapIn" />
+      <wsdl:output message="tns:IssueSwipedEBTCashBenefitSaleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueSwipedEBTFoodStampRefund">
+      <wsdl:input message="tns:IssueSwipedEBTFoodStampRefundSoapIn" />
+      <wsdl:output message="tns:IssueSwipedEBTFoodStampRefundSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueSwipedEBTFoodStampSale">
+      <wsdl:input message="tns:IssueSwipedEBTFoodStampSaleSoapIn" />
+      <wsdl:output message="tns:IssueSwipedEBTFoodStampSaleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueSwipedLevel2Sale">
+      <wsdl:input message="tns:IssueSwipedLevel2SaleSoapIn" />
+      <wsdl:output message="tns:IssueSwipedLevel2SaleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueSwipedPreAuth">
+      <wsdl:input message="tns:IssueSwipedPreAuthSoapIn" />
+      <wsdl:output message="tns:IssueSwipedPreAuthSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueSwipedSale">
+      <wsdl:input message="tns:IssueSwipedSaleSoapIn" />
+      <wsdl:output message="tns:IssueSwipedSaleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueVoid">
+      <wsdl:input message="tns:IssueVoidSoapIn" />
+      <wsdl:output message="tns:IssueVoidSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="TXRetail31HttpPost">
+    <wsdl:operation name="ApplyTip">
+      <wsdl:input message="tns:ApplyTipHttpPostIn" />
+      <wsdl:output message="tns:ApplyTipHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueBatch">
+      <wsdl:input message="tns:IssueBatchHttpPostIn" />
+      <wsdl:output message="tns:IssueBatchHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueDebitSale">
+      <wsdl:input message="tns:IssueDebitSaleHttpPostIn" />
+      <wsdl:output message="tns:IssueDebitSaleHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedDebitSaleMagensa10">
+      <wsdl:input message="tns:IssueEncryptedDebitSaleMagensa10HttpPostIn" />
+      <wsdl:output message="tns:IssueEncryptedDebitSaleMagensa10HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedDebitSaleMagensa20">
+      <wsdl:input message="tns:IssueEncryptedDebitSaleMagensa20HttpPostIn" />
+      <wsdl:output message="tns:IssueEncryptedDebitSaleMagensa20HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedDebitSaleMagTek10">
+      <wsdl:input message="tns:IssueEncryptedDebitSaleMagTek10HttpPostIn" />
+      <wsdl:output message="tns:IssueEncryptedDebitSaleMagTek10HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedDebitSaleMagTek20">
+      <wsdl:input message="tns:IssueEncryptedDebitSaleMagTek20HttpPostIn" />
+      <wsdl:output message="tns:IssueEncryptedDebitSaleMagTek20HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedLevel2SaleIdTech">
+      <wsdl:input message="tns:IssueEncryptedLevel2SaleIdTechHttpPostIn" />
+      <wsdl:output message="tns:IssueEncryptedLevel2SaleIdTechHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedLevel2SaleMagensa10">
+      <wsdl:input message="tns:IssueEncryptedLevel2SaleMagensa10HttpPostIn" />
+      <wsdl:output message="tns:IssueEncryptedLevel2SaleMagensa10HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedLevel2SaleMagensa20">
+      <wsdl:input message="tns:IssueEncryptedLevel2SaleMagensa20HttpPostIn" />
+      <wsdl:output message="tns:IssueEncryptedLevel2SaleMagensa20HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedLevel2SaleMagTek10">
+      <wsdl:input message="tns:IssueEncryptedLevel2SaleMagTek10HttpPostIn" />
+      <wsdl:output message="tns:IssueEncryptedLevel2SaleMagTek10HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedLevel2SaleMagTek20">
+      <wsdl:input message="tns:IssueEncryptedLevel2SaleMagTek20HttpPostIn" />
+      <wsdl:output message="tns:IssueEncryptedLevel2SaleMagTek20HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedPreAuthIdTech">
+      <wsdl:input message="tns:IssueEncryptedPreAuthIdTechHttpPostIn" />
+      <wsdl:output message="tns:IssueEncryptedPreAuthIdTechHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedPreAuthMagensa10">
+      <wsdl:input message="tns:IssueEncryptedPreAuthMagensa10HttpPostIn" />
+      <wsdl:output message="tns:IssueEncryptedPreAuthMagensa10HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedPreAuthMagensa20">
+      <wsdl:input message="tns:IssueEncryptedPreAuthMagensa20HttpPostIn" />
+      <wsdl:output message="tns:IssueEncryptedPreAuthMagensa20HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedPreAuthMagTek10">
+      <wsdl:input message="tns:IssueEncryptedPreAuthMagTek10HttpPostIn" />
+      <wsdl:output message="tns:IssueEncryptedPreAuthMagTek10HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedPreAuthMagTek20">
+      <wsdl:input message="tns:IssueEncryptedPreAuthMagTek20HttpPostIn" />
+      <wsdl:output message="tns:IssueEncryptedPreAuthMagTek20HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedSaleIdTech">
+      <wsdl:input message="tns:IssueEncryptedSaleIdTechHttpPostIn" />
+      <wsdl:output message="tns:IssueEncryptedSaleIdTechHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedSaleMagensa10">
+      <wsdl:input message="tns:IssueEncryptedSaleMagensa10HttpPostIn" />
+      <wsdl:output message="tns:IssueEncryptedSaleMagensa10HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedSaleMagensa20">
+      <wsdl:input message="tns:IssueEncryptedSaleMagensa20HttpPostIn" />
+      <wsdl:output message="tns:IssueEncryptedSaleMagensa20HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedSaleMagTek10">
+      <wsdl:input message="tns:IssueEncryptedSaleMagTek10HttpPostIn" />
+      <wsdl:output message="tns:IssueEncryptedSaleMagTek10HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedSaleMagTek20">
+      <wsdl:input message="tns:IssueEncryptedSaleMagTek20HttpPostIn" />
+      <wsdl:output message="tns:IssueEncryptedSaleMagTek20HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueKeyedEBTBalanceCheck">
+      <wsdl:input message="tns:IssueKeyedEBTBalanceCheckHttpPostIn" />
+      <wsdl:output message="tns:IssueKeyedEBTBalanceCheckHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueKeyedEBTCashBenefitSale">
+      <wsdl:input message="tns:IssueKeyedEBTCashBenefitSaleHttpPostIn" />
+      <wsdl:output message="tns:IssueKeyedEBTCashBenefitSaleHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueKeyedEBTFoodStampRefund">
+      <wsdl:input message="tns:IssueKeyedEBTFoodStampRefundHttpPostIn" />
+      <wsdl:output message="tns:IssueKeyedEBTFoodStampRefundHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueKeyedEBTFoodStampSale">
+      <wsdl:input message="tns:IssueKeyedEBTFoodStampSaleHttpPostIn" />
+      <wsdl:output message="tns:IssueKeyedEBTFoodStampSaleHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueKeyedForce">
+      <wsdl:input message="tns:IssueKeyedForceHttpPostIn" />
+      <wsdl:output message="tns:IssueKeyedForceHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueKeyedLevel2Sale">
+      <wsdl:input message="tns:IssueKeyedLevel2SaleHttpPostIn" />
+      <wsdl:output message="tns:IssueKeyedLevel2SaleHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueKeyedPreAuth">
+      <wsdl:input message="tns:IssueKeyedPreAuthHttpPostIn" />
+      <wsdl:output message="tns:IssueKeyedPreAuthHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueKeyedSale">
+      <wsdl:input message="tns:IssueKeyedSaleHttpPostIn" />
+      <wsdl:output message="tns:IssueKeyedSaleHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssuePostAuth">
+      <wsdl:input message="tns:IssuePostAuthHttpPostIn" />
+      <wsdl:output message="tns:IssuePostAuthHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssuePreAuthVoid">
+      <wsdl:input message="tns:IssuePreAuthVoidHttpPostIn" />
+      <wsdl:output message="tns:IssuePreAuthVoidHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueRefundByReference">
+      <wsdl:input message="tns:IssueRefundByReferenceHttpPostIn" />
+      <wsdl:output message="tns:IssueRefundByReferenceHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueRepeatSale">
+      <wsdl:input message="tns:IssueRepeatSaleHttpPostIn" />
+      <wsdl:output message="tns:IssueRepeatSaleHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueSwipedEBTBalanceCheck">
+      <wsdl:input message="tns:IssueSwipedEBTBalanceCheckHttpPostIn" />
+      <wsdl:output message="tns:IssueSwipedEBTBalanceCheckHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueSwipedEBTCashBenefitSale">
+      <wsdl:input message="tns:IssueSwipedEBTCashBenefitSaleHttpPostIn" />
+      <wsdl:output message="tns:IssueSwipedEBTCashBenefitSaleHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueSwipedEBTFoodStampRefund">
+      <wsdl:input message="tns:IssueSwipedEBTFoodStampRefundHttpPostIn" />
+      <wsdl:output message="tns:IssueSwipedEBTFoodStampRefundHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueSwipedEBTFoodStampSale">
+      <wsdl:input message="tns:IssueSwipedEBTFoodStampSaleHttpPostIn" />
+      <wsdl:output message="tns:IssueSwipedEBTFoodStampSaleHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueSwipedLevel2Sale">
+      <wsdl:input message="tns:IssueSwipedLevel2SaleHttpPostIn" />
+      <wsdl:output message="tns:IssueSwipedLevel2SaleHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueSwipedPreAuth">
+      <wsdl:input message="tns:IssueSwipedPreAuthHttpPostIn" />
+      <wsdl:output message="tns:IssueSwipedPreAuthHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueSwipedSale">
+      <wsdl:input message="tns:IssueSwipedSaleHttpPostIn" />
+      <wsdl:output message="tns:IssueSwipedSaleHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueVoid">
+      <wsdl:input message="tns:IssueVoidHttpPostIn" />
+      <wsdl:output message="tns:IssueVoidHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TXRetail31Soap" type="tns:TXRetail31Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ApplyTip">
+      <soap:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/ApplyTip" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueBatch">
+      <soap:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueBatch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueDebitSale">
+      <soap:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueDebitSale" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedDebitSaleMagensa10">
+      <soap:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueEncryptedDebitSaleMagensa10" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedDebitSaleMagensa20">
+      <soap:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueEncryptedDebitSaleMagensa20" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedDebitSaleMagTek10">
+      <soap:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueEncryptedDebitSaleMagTek10" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedDebitSaleMagTek20">
+      <soap:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueEncryptedDebitSaleMagTek20" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedLevel2SaleIdTech">
+      <soap:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueEncryptedLevel2SaleIdTech" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedLevel2SaleMagensa10">
+      <soap:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueEncryptedLevel2SaleMagensa10" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedLevel2SaleMagensa20">
+      <soap:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueEncryptedLevel2SaleMagensa20" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedLevel2SaleMagTek10">
+      <soap:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueEncryptedLevel2SaleMagTek10" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedLevel2SaleMagTek20">
+      <soap:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueEncryptedLevel2SaleMagTek20" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedPreAuthIdTech">
+      <soap:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueEncryptedPreAuthIdTech" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedPreAuthMagensa10">
+      <soap:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueEncryptedPreAuthMagensa10" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedPreAuthMagensa20">
+      <soap:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueEncryptedPreAuthMagensa20" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedPreAuthMagTek10">
+      <soap:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueEncryptedPreAuthMagTek10" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedPreAuthMagTek20">
+      <soap:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueEncryptedPreAuthMagTek20" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedSaleIdTech">
+      <soap:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueEncryptedSaleIdTech" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedSaleMagensa10">
+      <soap:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueEncryptedSaleMagensa10" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedSaleMagensa20">
+      <soap:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueEncryptedSaleMagensa20" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedSaleMagTek10">
+      <soap:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueEncryptedSaleMagTek10" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedSaleMagTek20">
+      <soap:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueEncryptedSaleMagTek20" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueKeyedEBTBalanceCheck">
+      <soap:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueKeyedEBTBalanceCheck" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueKeyedEBTCashBenefitSale">
+      <soap:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueKeyedEBTCashBenefitSale" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueKeyedEBTFoodStampRefund">
+      <soap:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueKeyedEBTFoodStampRefund" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueKeyedEBTFoodStampSale">
+      <soap:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueKeyedEBTFoodStampSale" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueKeyedForce">
+      <soap:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueKeyedForce" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueKeyedLevel2Sale">
+      <soap:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueKeyedLevel2Sale" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueKeyedPreAuth">
+      <soap:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueKeyedPreAuth" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueKeyedSale">
+      <soap:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueKeyedSale" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssuePostAuth">
+      <soap:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssuePostAuth" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssuePreAuthVoid">
+      <soap:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssuePreAuthVoid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueRefundByReference">
+      <soap:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueRefundByReference" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueRepeatSale">
+      <soap:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueRepeatSale" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueSwipedEBTBalanceCheck">
+      <soap:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueSwipedEBTBalanceCheck" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueSwipedEBTCashBenefitSale">
+      <soap:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueSwipedEBTCashBenefitSale" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueSwipedEBTFoodStampRefund">
+      <soap:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueSwipedEBTFoodStampRefund" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueSwipedEBTFoodStampSale">
+      <soap:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueSwipedEBTFoodStampSale" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueSwipedLevel2Sale">
+      <soap:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueSwipedLevel2Sale" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueSwipedPreAuth">
+      <soap:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueSwipedPreAuth" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueSwipedSale">
+      <soap:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueSwipedSale" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueVoid">
+      <soap:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueVoid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TXRetail31Soap12" type="tns:TXRetail31Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ApplyTip">
+      <soap12:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/ApplyTip" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueBatch">
+      <soap12:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueBatch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueDebitSale">
+      <soap12:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueDebitSale" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedDebitSaleMagensa10">
+      <soap12:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueEncryptedDebitSaleMagensa10" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedDebitSaleMagensa20">
+      <soap12:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueEncryptedDebitSaleMagensa20" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedDebitSaleMagTek10">
+      <soap12:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueEncryptedDebitSaleMagTek10" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedDebitSaleMagTek20">
+      <soap12:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueEncryptedDebitSaleMagTek20" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedLevel2SaleIdTech">
+      <soap12:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueEncryptedLevel2SaleIdTech" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedLevel2SaleMagensa10">
+      <soap12:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueEncryptedLevel2SaleMagensa10" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedLevel2SaleMagensa20">
+      <soap12:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueEncryptedLevel2SaleMagensa20" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedLevel2SaleMagTek10">
+      <soap12:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueEncryptedLevel2SaleMagTek10" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedLevel2SaleMagTek20">
+      <soap12:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueEncryptedLevel2SaleMagTek20" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedPreAuthIdTech">
+      <soap12:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueEncryptedPreAuthIdTech" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedPreAuthMagensa10">
+      <soap12:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueEncryptedPreAuthMagensa10" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedPreAuthMagensa20">
+      <soap12:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueEncryptedPreAuthMagensa20" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedPreAuthMagTek10">
+      <soap12:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueEncryptedPreAuthMagTek10" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedPreAuthMagTek20">
+      <soap12:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueEncryptedPreAuthMagTek20" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedSaleIdTech">
+      <soap12:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueEncryptedSaleIdTech" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedSaleMagensa10">
+      <soap12:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueEncryptedSaleMagensa10" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedSaleMagensa20">
+      <soap12:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueEncryptedSaleMagensa20" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedSaleMagTek10">
+      <soap12:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueEncryptedSaleMagTek10" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedSaleMagTek20">
+      <soap12:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueEncryptedSaleMagTek20" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueKeyedEBTBalanceCheck">
+      <soap12:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueKeyedEBTBalanceCheck" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueKeyedEBTCashBenefitSale">
+      <soap12:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueKeyedEBTCashBenefitSale" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueKeyedEBTFoodStampRefund">
+      <soap12:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueKeyedEBTFoodStampRefund" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueKeyedEBTFoodStampSale">
+      <soap12:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueKeyedEBTFoodStampSale" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueKeyedForce">
+      <soap12:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueKeyedForce" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueKeyedLevel2Sale">
+      <soap12:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueKeyedLevel2Sale" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueKeyedPreAuth">
+      <soap12:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueKeyedPreAuth" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueKeyedSale">
+      <soap12:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueKeyedSale" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssuePostAuth">
+      <soap12:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssuePostAuth" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssuePreAuthVoid">
+      <soap12:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssuePreAuthVoid" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueRefundByReference">
+      <soap12:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueRefundByReference" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueRepeatSale">
+      <soap12:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueRepeatSale" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueSwipedEBTBalanceCheck">
+      <soap12:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueSwipedEBTBalanceCheck" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueSwipedEBTCashBenefitSale">
+      <soap12:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueSwipedEBTCashBenefitSale" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueSwipedEBTFoodStampRefund">
+      <soap12:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueSwipedEBTFoodStampRefund" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueSwipedEBTFoodStampSale">
+      <soap12:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueSwipedEBTFoodStampSale" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueSwipedLevel2Sale">
+      <soap12:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueSwipedLevel2Sale" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueSwipedPreAuth">
+      <soap12:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueSwipedPreAuth" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueSwipedSale">
+      <soap12:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueSwipedSale" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueVoid">
+      <soap12:operation soapAction="http://merchantwarehouse.com/MerchantWARE/Client3_1/TransactionRetail/IssueVoid" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TXRetail31HttpPost" type="tns:TXRetail31HttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="ApplyTip">
+      <http:operation location="/ApplyTip" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueBatch">
+      <http:operation location="/IssueBatch" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueDebitSale">
+      <http:operation location="/IssueDebitSale" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedDebitSaleMagensa10">
+      <http:operation location="/IssueEncryptedDebitSaleMagensa10" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedDebitSaleMagensa20">
+      <http:operation location="/IssueEncryptedDebitSaleMagensa20" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedDebitSaleMagTek10">
+      <http:operation location="/IssueEncryptedDebitSaleMagTek10" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedDebitSaleMagTek20">
+      <http:operation location="/IssueEncryptedDebitSaleMagTek20" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedLevel2SaleIdTech">
+      <http:operation location="/IssueEncryptedLevel2SaleIdTech" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedLevel2SaleMagensa10">
+      <http:operation location="/IssueEncryptedLevel2SaleMagensa10" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedLevel2SaleMagensa20">
+      <http:operation location="/IssueEncryptedLevel2SaleMagensa20" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedLevel2SaleMagTek10">
+      <http:operation location="/IssueEncryptedLevel2SaleMagTek10" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedLevel2SaleMagTek20">
+      <http:operation location="/IssueEncryptedLevel2SaleMagTek20" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedPreAuthIdTech">
+      <http:operation location="/IssueEncryptedPreAuthIdTech" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedPreAuthMagensa10">
+      <http:operation location="/IssueEncryptedPreAuthMagensa10" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedPreAuthMagensa20">
+      <http:operation location="/IssueEncryptedPreAuthMagensa20" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedPreAuthMagTek10">
+      <http:operation location="/IssueEncryptedPreAuthMagTek10" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedPreAuthMagTek20">
+      <http:operation location="/IssueEncryptedPreAuthMagTek20" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedSaleIdTech">
+      <http:operation location="/IssueEncryptedSaleIdTech" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedSaleMagensa10">
+      <http:operation location="/IssueEncryptedSaleMagensa10" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedSaleMagensa20">
+      <http:operation location="/IssueEncryptedSaleMagensa20" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedSaleMagTek10">
+      <http:operation location="/IssueEncryptedSaleMagTek10" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueEncryptedSaleMagTek20">
+      <http:operation location="/IssueEncryptedSaleMagTek20" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueKeyedEBTBalanceCheck">
+      <http:operation location="/IssueKeyedEBTBalanceCheck" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueKeyedEBTCashBenefitSale">
+      <http:operation location="/IssueKeyedEBTCashBenefitSale" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueKeyedEBTFoodStampRefund">
+      <http:operation location="/IssueKeyedEBTFoodStampRefund" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueKeyedEBTFoodStampSale">
+      <http:operation location="/IssueKeyedEBTFoodStampSale" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueKeyedForce">
+      <http:operation location="/IssueKeyedForce" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueKeyedLevel2Sale">
+      <http:operation location="/IssueKeyedLevel2Sale" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueKeyedPreAuth">
+      <http:operation location="/IssueKeyedPreAuth" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueKeyedSale">
+      <http:operation location="/IssueKeyedSale" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssuePostAuth">
+      <http:operation location="/IssuePostAuth" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssuePreAuthVoid">
+      <http:operation location="/IssuePreAuthVoid" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueRefundByReference">
+      <http:operation location="/IssueRefundByReference" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueRepeatSale">
+      <http:operation location="/IssueRepeatSale" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueSwipedEBTBalanceCheck">
+      <http:operation location="/IssueSwipedEBTBalanceCheck" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueSwipedEBTCashBenefitSale">
+      <http:operation location="/IssueSwipedEBTCashBenefitSale" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueSwipedEBTFoodStampRefund">
+      <http:operation location="/IssueSwipedEBTFoodStampRefund" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueSwipedEBTFoodStampSale">
+      <http:operation location="/IssueSwipedEBTFoodStampSale" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueSwipedLevel2Sale">
+      <http:operation location="/IssueSwipedLevel2Sale" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueSwipedPreAuth">
+      <http:operation location="/IssueSwipedPreAuth" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueSwipedSale">
+      <http:operation location="/IssueSwipedSale" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueVoid">
+      <http:operation location="/IssueVoid" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TXRetail31">
+    <wsdl:port name="TXRetail31Soap" binding="tns:TXRetail31Soap">
+      <soap:address location="https://staging.merchantware.net/MerchantWARE/ws/RetailTransaction/TXRetail31.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TXRetail31Soap12" binding="tns:TXRetail31Soap12">
+      <soap12:address location="https://staging.merchantware.net/MerchantWARE/ws/RetailTransaction/TXRetail31.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TXRetail31HttpPost" binding="tns:TXRetail31HttpPost">
+      <http:address location="https://staging.merchantware.net/MerchantWARE/ws/RetailTransaction/TXRetail31.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

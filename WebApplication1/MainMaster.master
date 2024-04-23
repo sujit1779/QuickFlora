@@ -1,0 +1,442 @@
+﻿<%@ Master Language="VB" CodeFile="MainMaster.master.vb" Inherits="MainMaster" %>
+
+ 
+<!DOCTYPE html>
+<!--[if IE 7]> <html lang="en" class="ie7 no-js"> <![endif]-->
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head runat="server">
+<meta charset="utf-8"/>
+<title>QuickFlora PO Module</title>
+    <meta name="robots" content="noindex">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<meta content="quickflora" name="description"/>
+<meta content="quickflora" name="author"/>
+
+ <!-- BEGIN GLOBAL MANDATORY STYLES -->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css"/>
+<link href="assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<link href="assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css"/>
+<link href="assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
+<link href="assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css"/>
+<!-- END GLOBAL MANDATORY STYLES -->
+
+<!-- BEGIN PAGE LEVEL STYLES -->
+ 
+    <asp:ContentPlaceHolder id="head" runat="server">
+
+    </asp:ContentPlaceHolder>
+
+<!-- END PAGE LEVEL STYLES -->
+
+
+<!-- BEGIN THEME STYLES -->
+<link href="assets/global/css/components.css" id="style_components" rel="stylesheet" type="text/css"/>
+<link href="assets/global/css/plugins.css" rel="stylesheet" type="text/css"/>
+<link href="assets/admin/layout/css/layout.css" rel="stylesheet" type="text/css"/>
+<link id="style_color" href="assets/admin/layout/css/themes/darkblue.css" rel="stylesheet" type="text/css"/>
+<link href="assets/admin/layout/css/custom.css?v=2" rel="stylesheet" type="text/css"/>
+<!-- END THEME STYLES -->
+
+
+         <style  type="text/css">
+            #fixed1
+            {
+                position: fixed;
+                top: 200px;
+                right: 0px;
+                width: 25px;
+                height: 80px;
+                background-color: #7AD624;
+            }
+            
+            #overlay
+            {
+                visibility: hidden;
+                position: absolute;
+                left: 0px;
+                top: 0px;
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                z-index: 1000;
+                background-image: url(https://secure.quickflora.com/EnterpriseASP/images/TransContentBackground.png);
+                background-repeat: repeat;
+            }
+            
+            #overlay div
+            {
+                width: 550px;
+                margin: 50px auto;
+                background-color: #fff;
+                border: 4px solid #A0A0A0;
+                padding: 15px;
+                text-align: center;
+            }
+            
+             #overlay2
+            {
+                visibility: hidden;
+                position: absolute;
+                left: 0px;
+                top: 0px;
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                z-index: 1000;
+                background-image: url(https://secure.quickflora.com/EnterpriseASP/images/TransContentBackground.png);
+                background-repeat: repeat;
+            }
+            
+            #overlay2 div
+            {
+                width: 550px;
+                margin: 50px auto;
+                background-color: #fff;
+                border: 4px solid #A0A0A0;
+                padding: 15px;
+                text-align: center;
+            }
+            
+        </style>
+	
+
+
+<link rel="shortcut icon" href="favicon.ico"/>
+
+
+</head>
+<body class="page-header-fixed page-quick-sidebar-over-content">
+
+
+
+    <form id="form1" runat="server">
+
+
+<!-- BEGIN HEADER -->
+<div class="page-header navbar navbar-fixed-top">
+	<!-- BEGIN HEADER INNER -->
+	<div class="page-header-inner">
+		<!-- BEGIN LOGO -->
+		<div class="page-logo">
+			<a class="text-logo" href="Home.aspx">
+            
+            <%= lblCompany.Text%>
+	        <asp:Label Visible="false"  class="form-title" ID="lblCompany" runat="server" Text=""> </asp:Label> 
+            
+            
+            </a>
+			<div class="menu-toggler sidebar-toggler hide">
+				<!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->
+			</div>
+		</div>
+		<!-- END LOGO -->
+		<!-- BEGIN RESPONSIVE MENU TOGGLER -->
+		<a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse">
+		</a>
+		<!-- END RESPONSIVE MENU TOGGLER -->
+		<!-- BEGIN TOP NAVIGATION MENU -->
+		<div class="top-menu">
+			<ul class="nav navbar-nav pull-right">
+			
+			<li class="top-cityname"><%=locationid %></li> 
+				<!-- BEGIN USER LOGIN DROPDOWN -->
+				<!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+				<li class="dropdown dropdown-user">
+					<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+					<img alt="" class="img-circle" src="assets/admin/layout/img/avatar.png"/>
+					<span class="username username-hide-on-mobile"> <%= EmployeeID%> </span>
+					<i class="fa fa-angle-down"></i>
+					</a>
+					<ul class="dropdown-menu dropdown-menu-default">
+						 
+						<li class="divider"></li>
+						<li><a href="<%= LoggOffURL %>"><i class="fa fa-power-off"></i> Log Off</a></li>
+					</ul>
+				</li>
+				<!-- END USER LOGIN DROPDOWN -->
+			</ul>
+		</div>
+		<!-- END TOP NAVIGATION MENU -->
+	</div>
+	<!-- END HEADER INNER -->
+</div>
+<!-- END HEADER -->
+<div class="clearfix"></div>
+
+
+
+
+
+
+
+
+<!-- BEGIN CONTAINER -->
+<div class="page-container">
+	<!-- BEGIN SIDEBAR -->
+	<div class="page-sidebar-wrapper">
+		<div class="page-sidebar navbar-collapse collapse">
+			<!-- BEGIN SIDEBAR MENU -->
+			<ul class="page-sidebar-menu page-sidebar-menu-closed " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200" >
+				<li class="sidebar-toggler-wrapper">
+					<div class="sidebar-toggler"></div>
+				</li>
+				<li id="DashBoard" class="last"><a href="Home.aspx"><i class="icon-settings"></i><span class="title">Dashboard</span></a></li>
+				<li id="BatchPO"><a href="<%=POURL %>"><i class="fa fa-area-chart"></i><span class="title">Batch PO</span></a></li>
+                
+				<li id="Requisiton" class="last"><a href="RequisitionOrder.aspx"><i class="icon-settings"></i><span class="title">New Requisition</span></a></li>  
+				<li id="PreBook"><a href="./RO/PreBookItems2.aspx"><i class="icon-settings"></i><span class="title">PreBooks</span></a></li>
+				<li id="allocation"><a href="./RO/PreBookList.aspx"><i class="icon-settings"></i><span class="title">Allocation</span></a></li>
+
+				<li id="RequisitionOrderList" class="last"><a href="RequisitionOrderList.aspx"><i class="icon-settings"></i><span class="title">View Requisition</span></a></li>  
+
+                <%=newmenu %> 
+
+				<li style="display:<%=POURL2Display%>;" id="Li6"><a href="<%=POURL2 %>"><i class="fa fa-lightbulb-o"></i> <span class="title">Requisition Recap</span></a></li>
+				<li id="NewPurchaseOrder"><a href="PO.aspx"><i class="fa fa-download"></i><span class="title">New Purchase Order</span></a></li>
+				<li id="PurchaseOrderList"><a href="OrderList.aspx"><i class="fa fa-area-chart"></i><span class="title">Purchase Order List</span></a></li>
+				<li id="Receiving"><a href="ReceivePOList.aspx"><i class="fa fa-area-chart"></i><span class="title">Receiving</span></a></li>
+                <li id="ReceivingByScan"><a href="ReceivingByScan.aspx"><i class="fa fa-area-chart"></i><span class="title">Receiving Scan</span></a></li>
+				<li id="Adjustments"><a href="InventoryAdjustments.aspx"><i class="fa fa-area-chart"></i><span class="title">Adjustments</span></a></li>
+				<li id="AdjustmentsLogs"><a href="InventoryAdjustmentsPOList.aspx"><i class="fa fa-area-chart"></i><span class="title">Adjustments  Logs</span></a></li>
+				<li id="Transfers"><a href="InventoryTransferDetaila.aspx"><i class="fa fa-area-chart"></i><span class="title">Transfers</span></a></li>
+				<li id="TransfersList"><a href="InventoryTransferLists.aspx"><i class="fa fa-area-chart"></i><span class="title">Transfers List</span></a></li>
+				
+				
+				<li id="Li1" ><a href="javascript:;"><i class="fa fa-line-chart"></i><span class="title">Reports</span><span class="arrow "></span></a>
+					<ul class="sub-menu" style="display: none;">
+					    <li id="Li3"><a    href="RequestReport.aspx"><i class="fa fa-area-chart"></i><span class="title">Request Report</span></a></li>	
+                        <li id="Li133"><a    href="RequestReportB.aspx"><i class="fa fa-area-chart"></i><span class="title">Purchased Requisitions Report</span></a></li>						
+                        <%=POExcelReport %>
+                        <%=HOstReport %>
+                        <%=TrReport %>
+                                                <li id="Li1303"><a    href="Receivingreport.aspx"><i class="fa fa-area-chart"></i><span class="title">Receiving report</span></a></li>						
+                        <li id="Li1304"><a    href="MonthlyReceivingReport.aspx"><i class="fa fa-area-chart"></i><span class="title">Monthly Receiving Report</span></a></li>						
+                        <li id="Li1305"><a    href="TransferReceivingReport.aspx"><i class="fa fa-area-chart"></i><span class="title">Transfer Receiving Report</span></a></li>	
+					</ul>
+				</li>
+								<li id="Li4" ><a href="javascript:;"><i class="fa fa-line-chart"></i><span class="title">Standing Orders</span><span class="arrow "></span></a>
+					<ul class="sub-menu" style="display: none;">
+					    <li id="Li9"><a    href='<%=StandingRequisitionOrderURL%>'><i class="fa fa-area-chart"></i><span class="title">Create new Standing Order</span></a></li>						
+					    <li id="Li10"><a    href="StandingRequisitionOrderList.aspx"><i class="fa fa-area-chart"></i><span class="title">Standing Orders List</span></a></li>						
+
+					</ul>
+				</li>
+				<li id="menu_tools" class="last"><a href="javascript:;"><i class="fa fa-line-chart"></i><span class="title">Tools</span><span class="arrow "></span></a>
+					<ul class="sub-menu" style="display: none;">
+                                                <li id="EmailNotifications" class="last"><a href="EmailNotifications.aspx"><i class="icon-settings"></i><span class="title">Email Notifications</span></a></li>
+					    <li id="Inventory" runat="server" class="last"><a href="InventoryStatus.aspx"><i class="icon-settings"></i><span class="title">Live Inventory Status</span></a></li>						
+					     <li id="Li7"><a href="PayrollEmployeesModuleAccessList.aspx"><i class="fa fa-area-chart"></i><span class="title">Module Access</span></a></li> 						           				
+						<li id="Li8"><a href="TruckingScheduleList.aspx"><i class="fa fa-area-chart"></i><span class="title">Trucking Schedule</span></a></li> 
+						<li id="delSchedule"><a href="DeliveryScheduleDetail.aspx"><i class="fa fa-area-chart"></i><span class="title">Delivery Schedule</span></a></li> 
+						<li id="Li2"><a href="ItemList.aspx"><i class="fa fa-area-chart"></i><span class="title">Items List</span></a></li>
+                        <li id="Li22200"><a href="ItemListByPrice.aspx"><i class="fa fa-area-chart"></i><span class="title">Items Price List</span></a></li>
+                        <li id="Li1200"><a href="IitemsFamily.aspx"><i class="fa fa-download"></i>Items Family List</a></li> 
+						<li id="Li1300"><a href="ItemsCategories.aspx"><i class="fa fa-download"></i>Items Categories List</a></li> 
+                        <%=newmenubutton %>
+						<li id="Li5"><a href="VendorList.aspx"><i class="fa fa-area-chart"></i><span class="title">Vendor list</span></a></li>	
+						<li id="Li11"><a href="EmployeeList.aspx"><i class="fa fa-area-chart"></i><span class="title">Employees</span></a></li>	
+                        <li id="Li12"><a href="OrderLocationPreferences.aspx"><i class="fa fa-area-chart"></i><span class="title">Locations</span></a></li>	
+                        <li id="Li14"><a href="InventoryForm.aspx"><i class="fa fa-area-chart"></i><span class="title">Add Grower Availability </span></a></li>	
+                        <li id="Li15"><a href="InventoryFormAdd.aspx"><i class="fa fa-area-chart"></i><span class="title">Grower Availability</span></a></li>	
+                        <%=VendorLiveAvailability %>
+                        <%=newmenubid %>
+                        <li id="Itemiupdate"><a href="Itemimports.aspx"><i class="fa fa-area-chart"></i><span class="title">Items Update</span></a></li>
+                         <li id="itemsimagesimport"  runat="server" visible="false"   ><a href="InventoryImagesList.aspx?page=CR"><i class="fa fa-print"></i>Items Images</a></li>
+                         <li id="poAdjust" ><a href="ReceivedPOData.aspx"><i class="fa fa-print"></i>Vendor Adjustment</a></li>
+                         <li id="IBL" runat="server" ><a href="RO/InventoryByLocationWH.aspx"><i class="fa fa-print"></i>Inventory By Location </a></li>
+					</ul>
+				</li>
+				 
+			    <li id="menu_support" class="last"><a href="javascript:;"><i class="fa fa-life-ring"></i><span class="title">Support and Logs</span><span class="arrow "></span></a>
+                    <ul class="sub-menu" style="display: none;">
+	                    <li id="menu_open_support_ticket"><a href="#"><i class="fa fa-lightbulb-o"></i> <span class="title">Open Support Ticket</span></a></li>		
+                        <li id="mn"><a href="docs.aspx"><i class="fa fa-lightbulb-o"></i> <span class="title">Help Docs</span></a></li>	
+                        <li id="Li13"><a href="sentmaillogs.aspx"><i class="fa fa-area-chart"></i><span class="title">Sent Mail Logs</span></a></li>
+                    </ul>
+                </li>
+                
+			</ul>
+			<!-- END SIDEBAR MENU -->
+		</div>
+	</div>
+	<!-- END SIDEBAR -->
+    
+	<!-- BEGIN CONTENT -->
+	<div class="page-content-wrapper">
+		<div class="page-content">
+			<!-- BEGIN PAGE HEADER-->
+			<h3 class="page-title">
+			
+            
+                <asp:ContentPlaceHolder id="ContentPlaceHolder3" runat="server">
+        
+                </asp:ContentPlaceHolder>
+			</h3>
+			<!-- END PAGE HEADER-->
+			<!-- BEGIN PAGE CONTENT-->
+			
+            
+        <asp:ContentPlaceHolder id="ContentPlaceHolder" runat="server">
+        
+        </asp:ContentPlaceHolder>
+
+			<!-- END PAGE CONTENT-->
+		</div>
+	</div>
+	<!-- END CONTENT -->
+	<!-- BEGIN QUICK SIDEBAR -->
+	
+	<!-- END QUICK SIDEBAR -->
+</div>
+<!-- END CONTAINER -->
+
+
+
+
+
+
+<!-- BEGIN FOOTER -->
+<div class="page-footer">
+	<div class="page-footer-inner">Copyright <%=DateTime.Now.Year%> &copy; QuickFlora. All Rights Reserved.</div>
+	<div class="scroll-to-top"><i class="icon-arrow-up"></i></div>
+</div>
+<!-- END FOOTER -->
+
+<script type="text/javascript">
+    function overlay() {
+        el = document.getElementById("overlay");
+        el.style.visibility = (el.style.visibility == "visible") ? "hidden" : "visible";
+    }
+ 
+
+   
+    
+</script>
+
+ <input type="hidden" id="txtstart" runat="server" />
+
+<div  style="padding:5px;position: fixed; top: 280px; right:0px;width: 25px;   background-color: #7AD624;" > <a style="text-decoration:none;" href='#' onclick='overlay()'> <p style="margin:5px;  font-family:Arial;color:White;font-weight:bolder; font-size:14px;"> H<br />E<br />L<br />P  </p> </a> </div>
+
+<div id="overlay">
+     <div>
+           
+          
+           <IFRAME id="suport" src='https://secure.quickflora.com/EnterpriseASP/scripts/Support.aspx?CompID=<%= JsCompanyID%>&DivID=<%= JSDivisionID%>&DeptID=<%= JSDepartmentID%>&UserName=NEWPOS@<%= JSUserName%>'      frameBorder=no width="540" height="500" ></IFRAME>
+
+          <a href='#' style="margin:5px;font-family:Arial;color:White;font-weight:bolder; font-size:14px; color:Red;" onclick='overlay()'>[Close]</a> 
+
+     </div>
+</div>    
+
+  
+
+
+    </form>
+
+
+
+
+
+
+
+<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+<!-- BEGIN CORE PLUGINS -->
+<!--[if lt IE 9]>
+<script src="assets/global/plugins/respond.min.js"></script>
+<script src="assets/global/plugins/excanvas.min.js"></script> 
+<![endif]-->
+
+<script src="assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+<script src="assets/global/plugins/jquery-migrate.min.js" type="text/javascript"></script>
+
+<!-- IMPORTANT! Load jquery-ui.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
+<script src="assets/global/plugins/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
+<script src="assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+<script src="assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+<script src="assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+<script src="assets/global/plugins/jquery.cokie.min.js" type="text/javascript"></script>
+ 
+<script src="assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+<!-- END CORE PLUGINS -->
+
+ 
+
+<!-- BEGIN PAGE LEVEL PLUGINS -->
+ 
+      <asp:ContentPlaceHolder id="ContentPlaceHolder2" runat="server">
+        
+
+
+        </asp:ContentPlaceHolder>
+
+ 
+
+<!-- END PAGE LEVEL PLUGINS -->
+<script src="assets/global/scripts/metronic.js" type="text/javascript"></script>
+<script src="assets/admin/layout/scripts/layout.js" type="text/javascript"></script>
+<script>
+    jQuery(document).ready(function () {
+        // initiate layout and plugins
+        Metronic.init(); // init metronic core components
+        Layout.init(); // init current layout
+    });
+</script>
+<!-- END JAVASCRIPTS -->
+
+     <%-- Create Log Script --%>
+    <script>
+        AddSessionLog();
+        function AddSessionLog() {
+            if ("<%= Session("CompanyID") %>" && "<%= Session("EmployeeID") %>") {
+
+                var Path = window.location.pathname;
+                var PathString = window.location.href;
+                var QString = PathString.split("?");
+                var URLNames = Path.split("/");
+                var page = URLNames[URLNames.length - 1];
+                page = page.split(".");
+
+                if (typeof page[0] == 'string') { } else { page[0] = ''; }
+                if (typeof QString[QString.length - 1] == 'string') { } else { QString[QString.length - 1] = ''; }
+                var formData = {
+                    "CompanyID": "<%= Session("CompanyID") %>",
+                    "DivisionID": "<%= Session("DivisionID") %>",
+                    "DepartmentID": "<%= Session("DepartmentID") %>",
+                    "EmployeeID": "<%= Session("EmployeeID") %>",
+                    "PageName": page[0],
+                    "PageDetails": QString[QString.length - 1]
+                };
+                $.ajax({
+                    method: 'POST',
+                    url: 'https://secureapps.quickflora.com/V2/api/EmployeeActionLogPOM',
+                    dataType: 'json',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    data: JSON.stringify(formData),
+                    success: function (response) {
+                        if (response = "Successful") {
+                        } else {
+                            //toastr.error('Something Went Worng!');
+                        }
+                    }
+                });
+            }
+        }
+    </script>
+    
+
+<IFRAME id=Defib src='Defibrillator.aspx' frameBorder=no width=0 height=0 ></IFRAME>
+
+</body>
+</html>
